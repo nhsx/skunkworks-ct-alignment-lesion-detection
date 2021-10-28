@@ -1,0 +1,68 @@
+name: Build and Deploy Docs
+
+on: 
+  push:
+    branches-ignore: 
+      - 'gh-pages'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    env:
+      repo-directory: ./ct-alignment
+      cycpd-directory: ./cycpd
+      docs-directory: ./ct-alignment/docs
+    steps:
+    
+      - uses: actions/checkout@v2
+        with:
+          path: ${{ env.repo-directory }}
+            
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8.12"
+          architecture: "x64"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        working-directory: ${{ env.docs-directory }}
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r ./requirements.txt
+
+      - name: Clone cycpd
+        uses: actions/checkout@v2
+        with:
+          repository: gattia/cycpd
+          path: ${{ env.cycpd-directory }}
+
+      - name: Install cycpd
+        working-directory: ${{ env.cycpd-directory }} 
+        run: |
+          pip install -e.
+      
+      - name: Build docs
+        working-directory: ${{ env.docs-directory }}
+        run: |
+          make html
+          
+      - name: Copy images
+        working-directory: ${{ env.docs-directory }}
+        run: |
+          mkdir -p build/html/docs
+          cp *.png build/html/docs/
+          cp ctcopy.sh build/html/docs/
+          
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.docs-directory }}/build/html

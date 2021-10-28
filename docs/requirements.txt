@@ -1,0 +1,16 @@
+sphinx
+sphinx_rtd_theme
+m2r2
+PySide2
+pydicom
+opencv-python
+matplotlib
+scikit-learn
+scikit-image
+kneed
+pandas
+torch
+torchvision
+tqdm
+pyqtgraph
+PyOpenGL

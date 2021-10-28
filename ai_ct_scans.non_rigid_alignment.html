@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.non_rigid_alignment module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ai_ct_scans.phase_correlation module" href="ai_ct_scans.phase_correlation.html" />
+    <link rel="prev" title="ai_ct_scans.models module" href="ai_ct_scans.models.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_loading.html">ai_ct_scans.data_loading module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_writing.html">ai_ct_scans.data_writing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.image_processing_utils.html">ai_ct_scans.image_processing_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.keypoint_alignment.html">ai_ct_scans.keypoint_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.model_trainers.html">ai_ct_scans.model_trainers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.models.html">ai_ct_scans.models module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ai_ct_scans.non_rigid_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation.html">ai_ct_scans.phase_correlation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation_image_processing.html">ai_ct_scans.phase_correlation_image_processing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.point_matching.html">ai_ct_scans.point_matching module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.scan_tool.html">ai_ct_scans.scan_tool module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.sectioning.html">ai_ct_scans.sectioning module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+      <li>ai_ct_scans.non_rigid_alignment module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.non_rigid_alignment.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.non_rigid_alignment">
+<span id="ai-ct-scans-non-rigid-alignment-module"></span><h1>ai_ct_scans.non_rigid_alignment module<a class="headerlink" href="#module-ai_ct_scans.non_rigid_alignment" title="Permalink to this headline"></a></h1>
+<p>Module to provide functions to perform non-rigid alignment of images.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.align_2D_using_CPD">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">align_2D_using_CPD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.align_2D_using_CPD" title="Permalink to this definition"></a></dt>
+<dd><p>Align an 2D image to a reference image using a non-rigid transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – A 2D greyscale image to be aligned.</p></li>
+<li><p><strong>reference</strong> (<em>np.ndarray</em>) – A 2D greyscale image that to be used as the reference.</p></li>
+<li><p><strong>point_threshold</strong> (<em>np.ndarray</em>) – Threshold value used for point extraction as an absolute intensity value.</p></li>
+<li><p><strong>filter_distance</strong> (<em>float</em>) – Distance threshold used to filter matched points.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 2D greyscale image that is the result of the alignment.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.align_3D_using_CPD">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">align_3D_using_CPD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_filter_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum_source_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum_target_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.align_3D_using_CPD" title="Permalink to this definition"></a></dt>
+<dd><p>Align a full 3d scan to a reference using a non-rigid transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – A 3D scan to be aligned.</p></li>
+<li><p><strong>reference</strong> (<em>np.ndarray</em>) – A 3D scan to be used as the reference.</p></li>
+<li><p><strong>match_filter_distance</strong> (<em>float</em>) – Distance threshold used to filter points following matching after coherent
+point drift.</p></li>
+<li><p><strong>maximum_source_points</strong> (<em>int</em>) – Maximum number of points to use from scan during alignment.</p></li>
+<li><p><strong>maximum_target_points</strong> (<em>int</em>) – Maximum number of points to use from reference scan during alignment.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 3D greyscale image that is the result of the alignment.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.estimate_3D_alignment_transform">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">estimate_3D_alignment_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_filter_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum_source_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum_target_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.estimate_3D_alignment_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Estimate the transform required to align a full 3d scan to a reference using a non-rigid transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – A 3D scan to be aligned.</p></li>
+<li><p><strong>reference</strong> (<em>np.ndarray</em>) – A 3D scan to be used as the reference.</p></li>
+<li><p><strong>match_filter_distance</strong> (<em>float</em>) – Distance threshold used to filter points.</p></li>
+<li><p><strong>maximum_source_points</strong> (<em>int</em>) – Maximum number of points to use from scan during alignment.</p></li>
+<li><p><strong>maximum_target_points</strong> (<em>int</em>) – Maximum number of points to use from reference scan during alignment.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 3D greyscale image that is the result of the alignment.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.get_warp_overlay">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">get_warp_overlay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_thickness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.get_warp_overlay" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a heatmap showing the the magnitude of the warp used to align a scan at each voxel.</p>
+<p>The warp is defined as the fractional volumetric change at each voxel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape</strong> (<em>tuple of int</em>) – The shape of the scan that has been aligned</p></li>
+<li><p><strong>transform_function</strong> (<em>callable</em>) – The transform function used to align the scan.</p></li>
+<li><p><strong>chunk_thickness</strong> (<em>int</em>) – Thickness of the chunks used to build up the warp overlay.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3D heatmap representing the warp magnitude.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.main">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.main" title="Permalink to this definition"></a></dt>
+<dd><p>CLI tool to calculate or apply a transform to align 3D scans.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.read_transform">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">read_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.read_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Read and load a serialised transform from disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em><em> or </em><em>Path</em>) – Path to write serialised transform to.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A transform that maps points in the source image onto the reference image.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(inst of sklearn.pipeline.Pipeline)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.transform_3d_volume">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">transform_3d_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_function</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.transform_3d_volume" title="Permalink to this definition"></a></dt>
+<dd><p>Transform a 3d volume by a generic geometric transform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – A 3D greyscale image to transform.</p></li>
+<li><p><strong>transform_function</strong> (<em>callable</em>) – Function used to map coordinates in input image to transformed image. Takes</p></li>
+<li><p><strong>shape</strong> (<em>and returns points as an np.ndarray of</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 3D greyscale image that is the result of the transform.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.transform_3d_volume_in_chunks">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">transform_3d_volume_in_chunks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_thickness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.transform_3d_volume_in_chunks" title="Permalink to this definition"></a></dt>
+<dd><p>Transform a 3d volume by a generic geometric transform, chunk-by-chunk in order to reduce required memory.</p>
+<p>Chunks are taken in the axial direction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – A 3D greyscale image to transform.</p></li>
+<li><p><strong>transform_function</strong> (<em>callable</em>) – Function used to map coordinates in input image to transformed image. Takes</p></li>
+<li><p><strong>shape</strong> (<em>and returns points as an np.ndarray of</em>) – </p></li>
+<li><p><strong>chunk_thickness</strong> (<em>int</em>) – Thickness of the chunks to align</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A 3D greyscale image that is the result of the transform.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.non_rigid_alignment.write_transform">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.non_rigid_alignment.</span></span><span class="sig-name descname"><span class="pre">write_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transform</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.non_rigid_alignment.write_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Serialise a transform and write to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>transform</strong> (<em>inst of sklearn.pipeline.Pipeline</em>) – A transform that maps points in the source image onto the
+reference image.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Path to write serialised transform to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.models.html" class="btn btn-neutral float-left" title="ai_ct_scans.models module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai_ct_scans.phase_correlation.html" class="btn btn-neutral float-right" title="ai_ct_scans.phase_correlation module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

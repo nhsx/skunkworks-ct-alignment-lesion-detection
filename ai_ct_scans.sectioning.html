@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.sectioning module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="ai_ct_scans.scan_tool module" href="ai_ct_scans.scan_tool.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_loading.html">ai_ct_scans.data_loading module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_writing.html">ai_ct_scans.data_writing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.image_processing_utils.html">ai_ct_scans.image_processing_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.keypoint_alignment.html">ai_ct_scans.keypoint_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.model_trainers.html">ai_ct_scans.model_trainers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.models.html">ai_ct_scans.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.non_rigid_alignment.html">ai_ct_scans.non_rigid_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation.html">ai_ct_scans.phase_correlation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation_image_processing.html">ai_ct_scans.phase_correlation_image_processing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.point_matching.html">ai_ct_scans.point_matching module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.scan_tool.html">ai_ct_scans.scan_tool module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ai_ct_scans.sectioning module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+      <li>ai_ct_scans.sectioning module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.sectioning.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.sectioning">
+<span id="ai-ct-scans-sectioning-module"></span><h1>ai_ct_scans.sectioning module<a class="headerlink" href="#module-ai_ct_scans.sectioning" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.CTEllipsoidFitter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">CTEllipsoidFitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_area_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_eccentricity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_ellipse_long_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ellipse_long_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ellipse_contour_centre_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.CTEllipsoidFitter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for fitting ellipses within 3D CT scans</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.CTEllipsoidFitter.draw_ellipses_2d">
+<span class="sig-name descname"><span class="pre">draw_ellipses_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.CTEllipsoidFitter.draw_ellipses_2d" title="Permalink to this definition"></a></dt>
+<dd><p>Fit ellipses within an image and then draw them onto a blank image of the same dimensions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – 2D grayscale image. Internally converted to uint8 values, so pixel values should round</p></li>
+<li><p><strong>1-255</strong> (<em>to distinct integers between</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D image with ellipses drawn on</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.CTEllipsoidFitter.draw_ellipsoid_walls">
+<span class="sig-name descname"><span class="pre">draw_ellipsoid_walls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sectioner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sectioner_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filterer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_sectioned</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.CTEllipsoidFitter.draw_ellipsoid_walls" title="Permalink to this definition"></a></dt>
+<dd><p>Runs through a 3D array of scan data in each dimension, sectioning and then drawing ellipses around any 2D
+elliptical structures found. By doing this in each axis, ellipsoidal shells are built up, which can guide
+to the location of ellipsoid_volume lesions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr</strong> (<em>np.ndarray</em>) – 3D CT scan data</p></li>
+<li><p><strong>sectioner</strong> (<a class="reference internal" href="#ai_ct_scans.sectioning.TextonSectioner" title="ai_ct_scans.sectioning.TextonSectioner"><em>TextonSectioner</em></a>) – A sectioning object with a .label_im method, to pixel-wise label an image</p></li>
+<li><p><strong>sectioner_kwargs</strong> (<em>dict</em>) – Kwargs for the instantiation of a sectioner object</p></li>
+<li><p><strong>filterer</strong> (<em>method</em>) – A filtering method to apply after sectioning, typically scipy.signal.medfilt2d, which can</p></li>
+<li><p><strong>boundaries.</strong> (<em>round the edges of sectioned tissue</em>) – </p></li>
+<li><p><strong>filter_kernel</strong> (<em>tuple of ints</em>) – Shape of the kernel to use with filterer</p></li>
+<li><p><strong>return_sectioned</strong> (<em>bool</em>) – Whether to return the sectioned 3D scan as well as the ellipsoidal view</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if return_sectioned=False, only return a 3D ndarray with 1s, 2s or 3s
+wherever ellipse edges were detected in each 2D slice. A value of 1 means an ellipse edge was only detected
+at that pixel in a single axis, 2 in 2 axes, 3 in 3 axes. If return_sectioned=True, also return a 3D ndarray
+of the sectioned CT scan</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(tuple of ndarrays or ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.CTEllipsoidFitter.find_ellipsoids">
+<span class="sig-name descname"><span class="pre">find_ellipsoids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rich_ellipses</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.CTEllipsoidFitter.find_ellipsoids" title="Permalink to this definition"></a></dt>
+<dd><p>Find ellipsoids within a list of 2D ellipses, where the centres of the 2D ellipses in 3D space must be close
+together and of the same underlying tissue class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>rich_ellipses</strong> (<em>list of tuples</em>) – A list of rich ellipses, similar to the output of
+self._ellipses_to_rich_information.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>A list of all ellipsoids found, each one a dict with a ‘centre’: 3D ndarray,
+‘max_position’: 1D ndarray length 3 (axial, coronal, sagittal max positions of a bounding box),
+‘min_position’: 1D ndarray length 3, minimum bounding box positions,
+‘volume’: ellipsoid volume in pixels,
+‘axis_ellipses_count’: list of ints length 3, the number of ellipses that contributed to the detection on</p>
+<blockquote>
+<div><p>an ellipsoid in each axis,
+‘class’: int, the numerical tissue class assigned to the ellipse, expected to be offset by one compared to
+the output of a TextonSectioner.label_im output, as -1 is treated as background by the sectioner and 0 is
+treated as background in the ellipse fitter, so an offset will have been applied to aid ellipse detection</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list of dicts)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.DinoSectioner">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">DinoSectioner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4628.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples_per_image</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.DinoSectioner" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ai_ct_scans.sectioning.TextonSectioner" title="ai_ct_scans.sectioning.TextonSectioner"><code class="xref py py-class docutils literal notranslate"><span class="pre">ai_ct_scans.sectioning.TextonSectioner</span></code></a></p>
+<p>Class for using DINO-trained models to section images. Much of the code is refactored from the DINO repository,
+itself stored in ai_ct_scans.dino.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.DinoSectioner.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.DinoSectioner.load" title="Permalink to this definition"></a></dt>
+<dd><p>Reload a TextonSectioner using pickle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>load_path</strong> (<em>pathlib Path</em>) – Path to a pickled TextonSectioner</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.DinoSectioner.load_dino_model">
+<span class="sig-name descname"><span class="pre">load_dino_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vit_tiny'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrained_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkpoint_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'teacher'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.DinoSectioner.load_dino_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.DinoSectioner.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.DinoSectioner.save" title="Permalink to this definition"></a></dt>
+<dd><p>Save the TextonSectioner using pickle. Only the minimal set of clusterers, clusterer_titles and filters that
+are required to load and produce new predictions on images are saved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>out_path</strong> (<em>pathlib Path to a .pkl file</em>) – Where to save the TextonSectioner</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.DinoSectioner.single_image_texton_descriptors">
+<span class="sig-name descname"><span class="pre">single_image_texton_descriptors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.DinoSectioner.single_image_texton_descriptors" title="Permalink to this definition"></a></dt>
+<dd><p>Get the texton descriptors for a single image. This is largely a refactoring of code from the DINO
+repository, which can be seen in ai_ct_scans/dino/visualize_attention</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>ndarray</em>) – </p></li>
+<li><p><strong>threshold</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.EllipseFitter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">EllipseFitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_area_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_eccentricity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_ellipse_long_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ellipse_long_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ellipse_contour_centre_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.EllipseFitter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.EllipseFitter.fit_ellipses">
+<span class="sig-name descname"><span class="pre">fit_ellipses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.EllipseFitter.fit_ellipses" title="Permalink to this definition"></a></dt>
+<dd><p>Find valid ellipses in a pre-sectioned 2D image. Pre-sectioned here meaning that pixels in an original image
+have been replaced by class labels, such that nearby pixels are likely to share properties and therefore have
+been set to the same class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – The 2D image within which to find ellipses</p></li>
+<li><p><strong>background_val</strong> (<em>int</em>) – A valid uint8 number to be considered as background and skipped, default 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of found ellipses, each as returned by cv2.fitEllipse</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list of tuples of floats)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.HierarchicalMeanShift">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">HierarchicalMeanShift</span></span><a class="headerlink" href="#ai_ct_scans.sectioning.HierarchicalMeanShift" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A clustering algorithm that performs MeanShiftWithProbs, then performs a second MeanShiftWithProbs for each
+class discovered in the first MeanShiftWithProbs by separating the data points by found class and finding
+probabilities of each point in that class belonging to that class, and training a new MeanShiftWithProbs clusterer
+on those probabilities for each class.
+The second order MeanShiftWithProbs clusterers do not see training points outside the first order class to which
+they are fitting.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.HierarchicalMeanShift.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.HierarchicalMeanShift.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the base_clusterer and second_level_clusterers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>samples</strong> (<em>np.ndarray</em>) – N samples by M dimensions dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.HierarchicalMeanShift.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.HierarchicalMeanShift.predict" title="Permalink to this definition"></a></dt>
+<dd><p>Predicts the first order class of an array of samples</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>samples</strong> (<em>np.ndarray</em>) – N samples by M dimensions</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>N predictions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray of ints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.HierarchicalMeanShift.predict_full">
+<span class="sig-name descname"><span class="pre">predict_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.HierarchicalMeanShift.predict_full" title="Permalink to this definition"></a></dt>
+<dd><p>Predicts the class according to second order clusterers. First use the first order clusterer to section
+the samples down to those that should feed into each sub-clusterer, then label with the sub-clusterer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>samples</strong> (<em>np.ndarray</em>) – N samples by M dimensions</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>N predictions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray of ints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.HierarchicalMeanShift.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.HierarchicalMeanShift.predict_proba" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Predict probability of samples’ membership to particular clusters, using first order clusterer only.</dt><dd><p>Following the naming convention of sklearn’s other clusterer’s, having predict_proba, to enable integration
+with other methods</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>np.ndarray</em>) – N by M data points</p></li>
+<li><p><strong>cluster_label</strong> (<em>int</em><em> or </em><em>None</em>) – A cluster for which to predict the probability of each data point in sample’s</p></li>
+<li><p><strong>None</strong> (<em>membership. If</em>) – </p></li>
+<li><p><strong>class</strong> (<em>return the probabilities for each</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The probabilities of membership for each data point. If cluster_label was None, this will be
+shape (N, [number of clusters known by clusterer]), if cluster_label was an index of a known class, it will
+be shape (N,)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.HierarchicalMeanShift.predict_proba_secondary">
+<span class="sig-name descname"><span class="pre">predict_proba_secondary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_cluster_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.HierarchicalMeanShift.predict_proba_secondary" title="Permalink to this definition"></a></dt>
+<dd><p>Get the probability predictions from a second order clusterer on samples</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>predict the probabilities of membership of for</em>) – N data points by M dimensions set of samples to predict probability on</p></li>
+<li><p><strong>primary_label</strong> (<em>int</em>) – The index of the secondary clusterer associated with the label predicted by the primary</p></li>
+<li><p><strong>clusterer</strong> – </p></li>
+<li><p><strong>sub_cluster_label</strong> (<em>int</em>) – The index of the sub-class from the secondary clusterer for which you want to</p></li>
+<li><p><strong>samples</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>1D set of probabilities, same length as samples</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.HierarchicalMeanShift.predict_secondary">
+<span class="sig-name descname"><span class="pre">predict_secondary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.HierarchicalMeanShift.predict_secondary" title="Permalink to this definition"></a></dt>
+<dd><p>Predicts the second order class of an array of samples, within a class primary_label predicted by the first
+order clusterer. These predictions will start at class 0 and run to the number of clusters found when
+the relevant sub-clusterer was first trained, and hence will have a value offset when compared to predictions
+made by predict_full, which starts each new sub-clusterer’s labels at the running total of clusters found
+by previous sub-clusterers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>np.ndarray</em>) – N samples by M dimensions</p></li>
+<li><p><strong>primary_label</strong> (<em>int</em>) – The numerical class from the first order clusterer within which you wish to return</p></li>
+<li><p><strong>predictions</strong> (<em>second order</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>N predictions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray of ints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.MeanShiftWithProbs">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">MeanShiftWithProbs</span></span><a class="headerlink" href="#ai_ct_scans.sectioning.MeanShiftWithProbs" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.cluster._mean_shift.MeanShift</span></code></p>
+<p>A class for getting probability predictions of class membership using the sklearn MeanShift algorithm</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.MeanShiftWithProbs.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.MeanShiftWithProbs.fit" title="Permalink to this definition"></a></dt>
+<dd><p>Trains the clusterer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>samples</strong> (<em>np.ndarray</em>) – N samples by M dimensions dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.MeanShiftWithProbs.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.MeanShiftWithProbs.predict_proba" title="Permalink to this definition"></a></dt>
+<dd><p>Predict probability of samples’ membership to particular clusters. Following the naming
+convention of sklearn’s other clusterer’s, having predict_proba, to enable integration with other methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>np.ndarray</em>) – N by M data points</p></li>
+<li><p><strong>cluster_label</strong> (<em>int</em><em> or </em><em>None</em>) – A cluster for which to predict the probability of each data point in sample’s</p></li>
+<li><p><strong>None</strong> (<em>membership. If</em>) – </p></li>
+<li><p><strong>class</strong> (<em>return the probabilities for each</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The probabilities of membership for each data point. If cluster_label was None, this will be
+shape (N, [number of clusters known by clusterer]), if cluster_label was an index of a known class, it will
+be shape (N,)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">TextonSectioner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'intensity'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples_per_image</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blur_kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clusterers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clusterer_titles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">medfilt_kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Section images using textons - generate per-pixel descriptors using convolution-based filters or simple
+intensity values, use clustering algorithms to separate these descriptors into classes, and enable sectioning of
+new images using the trained clusterers.
+TextonSectioner runs through axial views of patients from the dataset, by default randomly, to generate descriptors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner.build_sample_texton_set">
+<span class="sig-name descname"><span class="pre">build_sample_texton_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner.build_sample_texton_set" title="Permalink to this definition"></a></dt>
+<dd><p>Cycle through images from the dataset and build up a texton sample set in self.texton_sample_set</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>threshold</strong> (<em>int</em>) – Value below which not to accept texton descriptors into the training set for. Typically</p></li>
+<li><p><strong>500</strong> – </p></li>
+<li><p><strong>air</strong> (<em>to rule out</em>) – </p></li>
+<li><p><strong>otherwise</strong> (<em>which dominates the training set</em>) – </p></li>
+<li><p><strong>random</strong> (<em>bool</em>) – Whether to select images randomly from the MultiPatientAxialStreamer or simply step through</p></li>
+<li><p><strong>etc</strong> (<em>the first patient followed by the second patient</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner.label_im">
+<span class="sig-name descname"><span class="pre">label_im</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clusterer_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_structure_class_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_sub_structure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner.label_im" title="Permalink to this definition"></a></dt>
+<dd><p>Sections a new image with class labels assigned by a trained clusterer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im</strong> (<em>np.ndarray</em>) – 2D image to be labelled pixel-wise</p></li>
+<li><p><strong>threshold</strong> (<em>int</em>) – A value below which to assign all image pixel classes to -1, useful for sectioning out</p></li>
+<li><p><strong>set</strong> (<em>air with a threshold of ~500 when clusterers have not been trained with air in the texton sample</em>) – </p></li>
+<li><p><strong>clusterer_ind</strong> (<em>int</em>) – The clusterer index in self.clusterers you wish to label the image with. Defaults to 0</p></li>
+<li><p><strong>sub_structure_class_label</strong> (<em>int</em><em> or </em><em>None</em>) – The class predicted by the clusterer at clusterer_ind in</p></li>
+<li><p><strong>a</strong> (<em>self.clusterers you wish to predict sub-class labels for - this must be used with</em>) – </p></li>
+<li><p><strong>labelled</strong> (<em>self.clusterer</em><em>[</em><em>clusterer_ind</em><em>] </em><em>that has hierarchical style</em>) – </p></li>
+<li><p><strong>method</strong> (<em>i.e. has a predict_secondary</em>) – </p></li>
+<li><p><strong>as</strong> – </p></li>
+<li><p><strong>None</strong> (<em>in HierarchicalMeanShift. If</em>) – </p></li>
+<li><p><strong>clusterer</strong> (<em>only use a first order</em>) – </p></li>
+<li><p><strong>full_sub_structure</strong> (<em>bool</em><em>, </em><em>optional</em>) – If a  hiererachical clusterer has been selected with clusterer_ind,</p></li>
+<li><p><strong>predictions</strong> (<em>whether to return the full sub-class predictions rather than the first order</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The class predictions, same shape as im</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray of ints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner.load" title="Permalink to this definition"></a></dt>
+<dd><p>Reload a TextonSectioner using pickle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>load_path</strong> (<em>pathlib Path</em>) – Path to a pickled TextonSectioner</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner.probabilities_im">
+<span class="sig-name descname"><span class="pre">probabilities_im</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clusterer_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cluster_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_sub_structure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_structure_class_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner.probabilities_im" title="Permalink to this definition"></a></dt>
+<dd><p>Get the probabilities that each pixel in an image belong to a particular class predicted by a clusterer, as
+well as getting the class predictions image itself</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>im</strong> (<em>np.ndarray</em>) – 2D image to be labelled pixel-wise</p></li>
+<li><p><strong>threshold</strong> (<em>int</em>) – A value below which to assign all image pixel classes to -1, useful for sectioning out</p></li>
+<li><p><strong>set</strong> (<em>air with a threshold of ~500 when clusterers have not been trained with air in the texton sample</em>) – </p></li>
+<li><p><strong>clusterer_ind</strong> (<em>int</em>) – The clusterer index in self.clusterers you wish to label the image with. Defaults to 0</p></li>
+<li><p><strong>cluster_label</strong> (<em>int</em>) – The class within which to predict probabilities for</p></li>
+<li><p><strong>return_sub_structure</strong> (<em>bool</em>) – Whether to use a secondary clusterer to predict the probabilities, e.g. from</p></li>
+<li><p><strong>HierarchicalMeanShift</strong> – </p></li>
+<li><p><strong>sub_structure_class_label</strong> (<em>int</em>) – If return_sub_structure is True, the sub-class label to predict</p></li>
+<li><p><strong>for</strong> (<em>probabilities</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>First element: The class predictions for each pixel, second element: the
+probabilities image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(tuple of np.ndarrays)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner.save" title="Permalink to this definition"></a></dt>
+<dd><p>Save the TextonSectioner using pickle. Only the minimal set of clusterers, clusterer_titles and filters that
+are required to load and produce new predictions on images are saved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>out_path</strong> (<em>pathlib Path to a .pkl file</em>) – Where to save the TextonSectioner</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner.single_image_texton_descriptors">
+<span class="sig-name descname"><span class="pre">single_image_texton_descriptors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner.single_image_texton_descriptors" title="Permalink to this definition"></a></dt>
+<dd><p>Get the texton descriptors for each pixel in an image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>im</strong> (<em>np.ndarray</em>) – 2D image</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The texton descriptors for the image, shaped into (number of descriptors, <a href="#id1"><span class="problematic" id="id2">*</span></a>im.shape)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(3D ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.sectioning.TextonSectioner.train_clusterers">
+<span class="sig-name descname"><span class="pre">train_clusterers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clusterer_inds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.TextonSectioner.train_clusterers" title="Permalink to this definition"></a></dt>
+<dd><p>Train each clusterer in self.clusterers against the texton dataset, or a subset of clusterers. If any
+clusterer fails to train, remove it from self.clusterers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>clusterer_inds</strong> (<em>list of ints</em><em>, </em><em>optional</em>) – The indices of clusterers to train, defaults to train all of them</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.scan_tool.html" class="btn btn-neutral float-left" title="ai_ct_scans.scan_tool module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

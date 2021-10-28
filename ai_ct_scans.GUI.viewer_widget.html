@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.GUI.viewer_widget module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ai_ct_scans.data_loading module" href="ai_ct_scans.data_loading.html" />
+    <link rel="prev" title="ai_ct_scans.GUI.ui_stack_window module" href="ai_ct_scans.GUI.ui_stack_window.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="ai_ct_scans.GUI.html">ai_ct_scans.GUI package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+          <li><a href="ai_ct_scans.GUI.html">ai_ct_scans.GUI package</a> &raquo;</li>
+      <li>ai_ct_scans.GUI.viewer_widget module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.GUI.viewer_widget.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.GUI.viewer_widget">
+<span id="ai-ct-scans-gui-viewer-widget-module"></span><h1>ai_ct_scans.GUI.viewer_widget module<a class="headerlink" href="#module-ai_ct_scans.GUI.viewer_widget" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.SliceDirection">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.GUI.viewer_widget.</span></span><span class="sig-name descname"><span class="pre">SliceDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.SliceDirection" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Enum assigning identifier to slice orientation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.SliceDirection.AXIAL">
+<span class="sig-name descname"><span class="pre">AXIAL</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.SliceDirection.AXIAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.SliceDirection.CORONAL">
+<span class="sig-name descname"><span class="pre">CORONAL</span></span><em class="property"> <span class="pre">=</span> <span class="pre">1</span></em><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.SliceDirection.CORONAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.SliceDirection.SAGITTAL">
+<span class="sig-name descname"><span class="pre">SAGITTAL</span></span><em class="property"> <span class="pre">=</span> <span class="pre">2</span></em><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.SliceDirection.SAGITTAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.GUI.viewer_widget.</span></span><span class="sig-name descname"><span class="pre">ViewerWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_of_scans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PySide2.QtWidgets.QWidget</span></code></p>
+<p>Widget to handle displaying scan data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.ui">
+<span class="sig-name descname"><span class="pre">ui</span></span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.ui" title="Permalink to this definition"></a></dt>
+<dd><p>UI class containing UI elements for this widget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.Ui" title="ai_ct_scans.GUI.viewer_widget.ViewerWidget.Ui">ViewerWidget.Ui</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.data" title="Permalink to this definition"></a></dt>
+<dd><p>data for display.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.blank_frames">
+<span class="sig-name descname"><span class="pre">blank_frames</span></span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.blank_frames" title="Permalink to this definition"></a></dt>
+<dd><p>blank frame for each scan of correct size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict of np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.phase_correlation_shift">
+<span class="sig-name descname"><span class="pre">phase_correlation_shift</span></span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.phase_correlation_shift" title="Permalink to this definition"></a></dt>
+<dd><p>Phase correlation shift values in each of 3 axes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tuple of int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.orientation">
+<span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Orientation of scan view slicing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ai_ct_scans.GUI.viewer_widget.SliceDirection" title="ai_ct_scans.GUI.viewer_widget.SliceDirection">SliceDirection</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.local_region">
+<span class="sig-name descname"><span class="pre">local_region</span></span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.local_region" title="Permalink to this definition"></a></dt>
+<dd><p>Local region for phase correlation alignment. 2D coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.cpd_aligned_scan">
+<span class="sig-name descname"><span class="pre">cpd_aligned_scan</span></span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.cpd_aligned_scan" title="Permalink to this definition"></a></dt>
+<dd><p>Aligned 3D scan (using loaded CPD alignment)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.Ui">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Ui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_scans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.Ui" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.calculate_non_rigid_alignment">
+<span class="sig-name descname"><span class="pre">calculate_non_rigid_alignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.calculate_non_rigid_alignment" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the non-rigid alignment, store the offset and trigger an update to the display.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.change_orientation">
+<span class="sig-name descname"><span class="pre">change_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.change_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Update orientation setting and displays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – index of orientation to change to</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.detect_ellipses">
+<span class="sig-name descname"><span class="pre">detect_ellipses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.detect_ellipses" title="Permalink to this definition"></a></dt>
+<dd><p>Method for triggering ellipse detection on each scan.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.display_results">
+<span class="sig-name descname"><span class="pre">display_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slice_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.display_results" title="Permalink to this definition"></a></dt>
+<dd><p>Method to display results using the results display.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>slice_index</strong> (<em>int</em>) – slice index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.display_sectioned_slice">
+<span class="sig-name descname"><span class="pre">display_sectioned_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slice_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.display_sectioned_slice" title="Permalink to this definition"></a></dt>
+<dd><p>Method to display results of tissue sectioning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>slice_index</strong> (<em>int</em>) – slice index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.display_slice">
+<span class="sig-name descname"><span class="pre">display_slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slice_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.display_slice" title="Permalink to this definition"></a></dt>
+<dd><p>Display axial slice of full scan.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>slice_index</strong> (<em>int</em>) – slice index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.extract_centre_coordinates_from_string">
+<span class="sig-name descname"><span class="pre">extract_centre_coordinates_from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.extract_centre_coordinates_from_string" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Extract slice coordinates as floats from string data in form “[x , y, z]”.</dt><dd><p>Removes any leading or trailing spaces inserted by PyQtTableWidgets.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>info_string</strong> (<em>string</em>) – list values formatted as single string.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of centre coordinates from string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.extract_ellipse_overlay_info">
+<span class="sig-name descname"><span class="pre">extract_ellipse_overlay_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scan_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.extract_ellipse_overlay_info" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Extract closest match for ellipse in current axis from ellipsoid</dt><dd><p>contributing ellipses.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scan_label</strong> (<em>str</em>) – string label for which scan to refer to. e.g. scan_1 or scan_2</p></li>
+<li><p><strong>slice_index</strong> (<em>int</em>) – current slice index.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>dictionary describing ellipse to overlay, or None if no matches in current</dt><dd><p>orientation.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.handle_item_selection">
+<span class="sig-name descname"><span class="pre">handle_item_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.handle_item_selection" title="Permalink to this definition"></a></dt>
+<dd><p>Detect the selected table item in the scan ellipse table
+and move the slice view to the relevant slice.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.set_data">
+<span class="sig-name descname"><span class="pre">set_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cpd_alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sectioning_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.set_data" title="Permalink to this definition"></a></dt>
+<dd><p>Set data for displaying. If CPD alignment is present, calculate the 3D transform for second scan.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dictionary of np.ndarray</em>) – dictionary with two or more full scan arrays</p></li>
+<li><p><strong>cpd_alignment</strong> (<em>sklearn.pipeline.Pipeline</em>) – CPD alignment pipeline object</p></li>
+<li><p><strong>sectioning_model</strong> (<a class="reference internal" href="ai_ct_scans.sectioning.html#ai_ct_scans.sectioning.TextonSectioner" title="ai_ct_scans.sectioning.TextonSectioner"><em>sectioning.TextonSectioner</em></a>) – A trained tissue sectioning model</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.setup_orientation">
+<span class="sig-name descname"><span class="pre">setup_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orientation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.setup_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>Configure class attributes specific to the currently selected orientation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>orientation</strong> (<a class="reference internal" href="#ai_ct_scans.GUI.viewer_widget.SliceDirection" title="ai_ct_scans.GUI.viewer_widget.SliceDirection"><em>SliceDirection</em></a>) – Enum value for slice orientation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.show_phase_correlation">
+<span class="sig-name descname"><span class="pre">show_phase_correlation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.show_phase_correlation" title="Permalink to this definition"></a></dt>
+<dd><p>Perform phase correlation based around the local region defined.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;PySide2.QtCore.QMetaObject</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_ellipse_table">
+<span class="sig-name descname"><span class="pre">toggle_ellipse_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_ellipse_table" title="Permalink to this definition"></a></dt>
+<dd><p>If toggle button pressed, either hide or show detection table.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_ellipse_table_button">
+<span class="sig-name descname"><span class="pre">toggle_ellipse_table_button</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_ellipse_table_button" title="Permalink to this definition"></a></dt>
+<dd><p>Programatically hide or show detection table toggle button.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_non_rigid_2d_controls">
+<span class="sig-name descname"><span class="pre">toggle_non_rigid_2d_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_non_rigid_2d_controls" title="Permalink to this definition"></a></dt>
+<dd><p>Hide or show the controls used for non-rigid alignment.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_phase_correlation_controls">
+<span class="sig-name descname"><span class="pre">toggle_phase_correlation_controls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_phase_correlation_controls" title="Permalink to this definition"></a></dt>
+<dd><p>Hide or show the controls used for phase correlation alignment.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_tissue_sectioning">
+<span class="sig-name descname"><span class="pre">toggle_tissue_sectioning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_tissue_sectioning" title="Permalink to this definition"></a></dt>
+<dd><p>Display or hide the tissue sectioning controls and display.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_warp_display">
+<span class="sig-name descname"><span class="pre">toggle_warp_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.toggle_warp_display" title="Permalink to this definition"></a></dt>
+<dd><p>Display or hide the warp display.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_ellipse_table">
+<span class="sig-name descname"><span class="pre">update_ellipse_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scan_1_ellipses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan_2_ellipses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_ellipse_table" title="Permalink to this definition"></a></dt>
+<dd><p>Method for updating the detection table with ellipse data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>scan_1_ellipses</strong> (<em>list</em>) – List of ellipse dictionaries for scan 1</p></li>
+<li><p><strong>scan_2_ellipses</strong> (<em>list</em>) – List of ellipse dictionaries for scan 2</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_local_region">
+<span class="sig-name descname"><span class="pre">update_local_region</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_local_region" title="Permalink to this definition"></a></dt>
+<dd><p>Update the local region that has been defined for phase correlation alignment, as (x, y) coordinates.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_scan">
+<span class="sig-name descname"><span class="pre">update_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slice_index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_scan" title="Permalink to this definition"></a></dt>
+<dd><p>Update 3D scan view with updated slice index or orientation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_scan_toggle">
+<span class="sig-name descname"><span class="pre">update_scan_toggle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.viewer_widget.ViewerWidget.update_scan_toggle" title="Permalink to this definition"></a></dt>
+<dd><p>Update scan display visibility depending on toggle value.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.GUI.ui_stack_window.html" class="btn btn-neutral float-left" title="ai_ct_scans.GUI.ui_stack_window module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai_ct_scans.data_loading.html" class="btn btn-neutral float-right" title="ai_ct_scans.data_loading module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.model_trainers module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ai_ct_scans.models module" href="ai_ct_scans.models.html" />
+    <link rel="prev" title="ai_ct_scans.keypoint_alignment module" href="ai_ct_scans.keypoint_alignment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_loading.html">ai_ct_scans.data_loading module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_writing.html">ai_ct_scans.data_writing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.image_processing_utils.html">ai_ct_scans.image_processing_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.keypoint_alignment.html">ai_ct_scans.keypoint_alignment module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ai_ct_scans.model_trainers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.models.html">ai_ct_scans.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.non_rigid_alignment.html">ai_ct_scans.non_rigid_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation.html">ai_ct_scans.phase_correlation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation_image_processing.html">ai_ct_scans.phase_correlation_image_processing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.point_matching.html">ai_ct_scans.point_matching module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.scan_tool.html">ai_ct_scans.scan_tool module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.sectioning.html">ai_ct_scans.sectioning module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+      <li>ai_ct_scans.model_trainers module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.model_trainers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.model_trainers">
+<span id="ai-ct-scans-model-trainers-module"></span><h1>ai_ct_scans.model_trainers module<a class="headerlink" href="#module-ai_ct_scans.model_trainers" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.model_trainers.</span></span><span class="sig-name descname"><span class="pre">InfillTrainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axial_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coronal_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sagittal_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blank_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_encoder_convs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_filts_per_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neurons_per_dense</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_dense_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoder_filts_per_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_decoder_convs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_previous_memmaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blur_kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_outline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for training an ai_ct_scans.models.Infiller network</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.border_mask_builder">
+<span class="sig-name descname"><span class="pre">border_mask_builder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.border_mask_builder" title="Permalink to this definition"></a></dt>
+<dd><p>Get a list of logical ndarrays that can be used to mask out the border region of an input image, and
+extract that local region for a ‘label’ array at output of the model. Applying these should help with aliasing
+effects at the edges of cnn output</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A set of masks to apply to the axial, coronal and sagittal views taken during
+building of a batch</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(list of 2D ndarrays)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.build_batch">
+<span class="sig-name descname"><span class="pre">build_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patient_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_part_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan_num_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords_input_array</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_above_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_off_edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.build_batch" title="Permalink to this definition"></a></dt>
+<dd><p>Get a batch of inputs and labels for a ai_ct_scans.models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>patient_indices</strong> (<em>optional</em><em>, </em><em>ndarray of type int</em>) – The indices of patients to access for each batch element,</p></li>
+<li><p><strong>zero-indexing</strong> (<em>with</em>) – </p></li>
+<li><p><strong>body_part_indices</strong> (<em>optional</em><em>, </em><em>ndarray of type int</em>) – Indices of body parts to use to build each batch element,</p></li>
+<li><p><strong>abdomen</strong> (<em>0 for</em>) – </p></li>
+<li><p><strong>thorax</strong> (<em>1 for</em>) – </p></li>
+<li><p><strong>plane_indices</strong> (<em>optional</em><em>, </em><em>ndarray of type int</em>) – Indices of plane to view the batch element from, 0 for axial,</p></li>
+<li><p><strong>coronal</strong> (<em>1 for</em>) – </p></li>
+<li><p><strong>sagittal</strong> (<em>2 for</em>) – </p></li>
+<li><p><strong>scan_num_indices</strong> (<em>optional</em><em>, </em><em>ndarray of type int</em>) – Indices of which sequential scan from each patient to use,</p></li>
+<li><p><strong>scan</strong> (<em>1 for second</em>) – </p></li>
+<li><p><strong>scan</strong> – </p></li>
+<li><p><strong>coords_input_array</strong> (<em>optional</em><em>, </em><em>list of lendth 3 1D ndarrays of type int</em>) – The coordinates to use when</p></li>
+<li><p><strong>that</strong> (<em>building each batch element. The coordinate corresponding to the plane_index will be the slice along</em>) – </p></li>
+<li><p><strong>index</strong> – </p></li>
+<li><p><strong>from</strong> (<em>while the other two coordinates will define the top left coordinate of the rectangle extracted</em>) – </p></li>
+<li><p><strong>plane</strong> (<em>that</em>) – </p></li>
+<li><p><strong>batch_size</strong> (<em>optional</em><em>, </em><em>int</em>) – How many slices to return for a batch</p></li>
+<li><p><strong>require_above_thresh</strong> (<em>bool</em>) – Whether to reject random slices that do not have any elements above</p></li>
+<li><p><strong>found</strong> (<em>self.threshold and seek out new slices until one is</em>) – </p></li>
+<li><p><strong>allow_off_edge</strong> (<em>bool</em>) – Whether to allow coords_input_array to cause the output slice to overlap the edges of</p></li>
+<li><p><strong>central</strong> (<em>the original scans - useful to ensure that it is possible for every part of a scan to occur at the</em>) – </p></li>
+<li><p><strong>region</strong> (<em>masked</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>‘input_images’: a stack of 2d axial, coronal and sagittal slices</dt><dd><p>’input_planes’: a stack of one hot vectors, that correspond to which view the slice
+was taken from. Shape [batch size, 3]
+‘input_body_part’: a stack of one hot vectors, that correspond to the body part the
+slice was taken from. Shape [batch size, 2]
+‘input_coords’: a stack of 1D vectors describing the original xyz location of the
+slice taken
+‘labels’: a stack of 2D axial, coronal and sagittal slices, representing the data
+that was masked at the centre of each element of input_images</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(dict of torch.Tensors)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'model.pth'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.load_model" title="Permalink to this definition"></a></dt>
+<dd><p>Load a pretrained model, optimiser state, loss at time of saving, iteration at time of saving</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> (<em>pathlib Path</em>) – Directory in which the model is saved</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – Model filename, defaults to ‘model.pth’</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.loss">
+<span class="sig-name descname"><span class="pre">loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.loss" title="Permalink to this definition"></a></dt>
+<dd><p>Defines a custom loss function for the network. Weights the loss such that reproduction of the masked region
+(and a small border area around it) contributes to the overall loss on the same order of magnitude as all other
+pixels that were predicted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_out</strong> (<em>at least a 'labels' stack of Tensor images of the same shape as</em>) – Stack of images that the model has predicted</p></li>
+<li><p><strong>batch</strong> (<em>dict as built by self.build_batch</em>) – The batch that was used for the iteration, which should include</p></li>
+<li><p><strong>model_out</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the MSE error in the output prediction after reweighting masked region of prediction</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(torch Tensor)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.plane_mask_builder">
+<span class="sig-name descname"><span class="pre">plane_mask_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blank_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.plane_mask_builder" title="Permalink to this definition"></a></dt>
+<dd><p>Get a list of logical ndarrays that can be used to mask out the central region of an input image, and
+extract that local region for a ‘label’ array at output of the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A set of masks to apply to the axial, coronal and sagittal views taken during
+building of a batch</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(list of 2D ndarrays)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.process_full_scan">
+<span class="sig-name descname"><span class="pre">process_full_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patient_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_part_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_off_edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.process_full_scan" title="Permalink to this definition"></a></dt>
+<dd><p>Run a single scan through the model in batches along a chosen axis, patching the prediction of the masked
+region together and subtracting from the real scan to form an ‘anomaly scan’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>patient_index</strong> (<em>int</em>) – The index of a patient as stored in ai_ct_scans.data_loading.MultiPatientLoader, ie</p></li>
+<li><p><strong>index</strong> (<em>Patient 1 at 0</em>) – </p></li>
+<li><p><strong>etc</strong> (<em>Patient 2 at 1</em>) – </p></li>
+<li><p><strong>body_part_index</strong> (<em>int</em>) – Index of a body part, 0 for abdomen, 1 for thorax currently supported</p></li>
+<li><p><strong>plane_index</strong> (<em>int</em>) – Index of plane to stack inputs from, 0 for axial, 1 for coronal, 2 for sagittal</p></li>
+<li><p><strong>scan_index</strong> (<em>int</em>) – 0 for scan 1, 1 for scan 2</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – How many layers to take along the plane_index stack for each batch, 24 with image sizes</p></li>
+<li><p><strong>VRAM</strong> (<em>256x256 seems to work fine with 8GB of</em>) – </p></li>
+<li><p><strong>overlap</strong> (<em>int</em>) – Number of times to overlap the masked regions to build up an average predicted view. The</p></li>
+<li><p><strong>output</strong> (<em>remainder of self.blank_width and overlap should be 0 for well-stitched</em>) – </p></li>
+<li><p><strong>save_path</strong> (<em>pathlib Path</em>) – File path at which to save the anomaly scan as a memmap (shape will be appended</p></li>
+<li><p><strong>ai_ct_scans.data_loading.load_memmap</strong><strong>)</strong> (<em>into the filename for ease of reloading with</em>) – </p></li>
+<li><p><strong>allow_off_edge</strong> (<em>bool</em>) – Whether to allow the model input to move off the edge of the scans, so that the</p></li>
+<li><p><strong>False</strong> (<em>stitched central blank regions can cover the entire scan. If</em>) – </p></li>
+<li><p><strong>masked</strong> (<em>the central square column of</em>) – </p></li>
+<li><p><strong>returned</strong> (<em>regions will be</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>3D volume of input - predicted output</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.random_axial_slicer">
+<span class="sig-name descname"><span class="pre">random_axial_slicer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_off_edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.random_axial_slicer" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a random crop from a random axial plane of 3D array arr</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>allow_off_edge</strong> (<em>bool</em>) – optional, defaults to False. Whether to allow indices which will take the view</p></li>
+<li><p><strong>arr</strong> (<em>ndarray</em>) – </p></li>
+<li><p><strong>indices</strong> (<em>list of 3 ints</em>) – Coordinates at which to take the slice from. 1st and 2nd indices define a top</p></li>
+<li><p><strong>view</strong> (<em>left corner of the</em>) – </p></li>
+<li><p><strong>slice</strong> (<em>0th index defines the axial</em>) – </p></li>
+<li><p><strong>arr</strong> – 3D volume</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.random_coronal_slicer">
+<span class="sig-name descname"><span class="pre">random_coronal_slicer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_off_edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.random_coronal_slicer" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a random crop from a random coronal plane of 3D array arr</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>allow_off_edge</strong> (<em>bool</em>) – optional, defaults to False. Whether to allow indices which will take the view</p></li>
+<li><p><strong>arr</strong> (<em>ndarray</em>) – </p></li>
+<li><p><strong>indices</strong> (<em>list of 3 ints</em>) – Coordinates at which to take the slice from. 0th and 2nd indices define a top</p></li>
+<li><p><strong>view</strong> (<em>left corner of the</em>) – </p></li>
+<li><p><strong>slice</strong> (<em>1st index defines the coronal</em>) – </p></li>
+<li><p><strong>arr</strong> – 3D volume</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.random_sagittal_slicer">
+<span class="sig-name descname"><span class="pre">random_sagittal_slicer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_off_edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.random_sagittal_slicer" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a random crop from a random sagittal plane of 3D array arr</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>allow_off_edge</strong> (<em>bool</em>) – optional, defaults to False. Whether to allow indices which will take the view</p></li>
+<li><p><strong>arr</strong> (<em>ndarray</em>) – </p></li>
+<li><p><strong>indices</strong> (<em>list of 3 ints</em>) – Coordinates at which to take the slice from. 0th and 1st indices define a top</p></li>
+<li><p><strong>view</strong> (<em>left corner of the</em>) – </p></li>
+<li><p><strong>slice</strong> (<em>0th index defines the sagittal</em>) – </p></li>
+<li><p><strong>arr</strong> – 3D volume</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.save_model">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_loss_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.save_model" title="Permalink to this definition"></a></dt>
+<dd><p>Save the model. If it has achieved the best loss, save to ‘model.pth’ within directory, otherwise save to
+‘latest_model.pth’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>directory</strong> (<em>pathlib Path</em>) – A directory in which to save the model</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.train_for_iterations">
+<span class="sig-name descname"><span class="pre">train_for_iterations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.train_for_iterations" title="Permalink to this definition"></a></dt>
+<dd><p>Train the model for a set number of iterations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>iterations</strong> (<em>int</em>) – Number of iterations to train for</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.InfillTrainer.train_step">
+<span class="sig-name descname"><span class="pre">train_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.InfillTrainer.train_step" title="Permalink to this definition"></a></dt>
+<dd><p>Build a single batch, do a single forward and backward pass.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.blur">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.model_trainers.</span></span><span class="sig-name descname"><span class="pre">blur</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">src</span></em>, <em class="sig-param"><span class="pre">ksize</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">dst</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">anchor</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">borderType</span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dst</span></span></span><a class="headerlink" href="#ai_ct_scans.model_trainers.blur" title="Permalink to this definition"></a></dt>
+<dd><p>.   &#64;brief Blurs an image using the normalized box filter.
+.
+.   The function smooths an image using the kernel:
+.
+.   f[texttt{K} =  frac{1}{texttt{ksize.width*ksize.height}} begin{bmatrix} 1 &amp; 1 &amp; 1 &amp;  cdots &amp; 1 &amp; 1  \ 1 &amp; 1 &amp; 1 &amp;  cdots &amp; 1 &amp; 1  \ hdotsfor{6} \ 1 &amp; 1 &amp; 1 &amp;  cdots &amp; 1 &amp; 1  \ end{bmatrix}f]
+.
+.   The call <cite>blur(src, dst, ksize, anchor, borderType)</cite> is equivalent to <cite>boxFilter(src, dst, src.type(), ksize,
+.   anchor, true, borderType)</cite>.
+.
+.   &#64;param src input image; it can have any number of channels, which are processed independently, but
+.   the depth should be CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+.   &#64;param dst output image of the same size and type as src.
+.   &#64;param ksize blurring kernel size.
+.   &#64;param anchor anchor point; default value Point(-1,-1) means that the anchor is at the kernel
+.   center.
+.   &#64;param borderType border mode used to extrapolate pixels outside of the image, see #BorderTypes. #BORDER_WRAP is not supported.
+.   &#64;sa  boxFilter, bilateralFilter, GaussianBlur, medianBlur</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.debug_plot">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.model_trainers.</span></span><span class="sig-name descname"><span class="pre">debug_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.debug_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the original image, the masked image, and the infilled version. Useful during debugging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_out</strong> – The infilled image stack from an Infiller model</p></li>
+<li><p><strong>batch</strong> (<em>dict of tensors</em>) – A dictionary with torch Tensors ‘labels’ and ‘input_images’</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – The index of the model’s output to compare to the original image and masked version, [0-batch size]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.model_trainers.det">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.model_trainers.</span></span><span class="sig-name descname"><span class="pre">det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.model_trainers.det" title="Permalink to this definition"></a></dt>
+<dd><p>Detach a torch Tensor to a cpu numpy version</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tensor</strong> (<em>torch.Tensor</em>) – A tensor to be detached and turned into an ndarray</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The same data as an ndarray</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.keypoint_alignment.html" class="btn btn-neutral float-left" title="ai_ct_scans.keypoint_alignment module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai_ct_scans.models.html" class="btn btn-neutral float-right" title="ai_ct_scans.models module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

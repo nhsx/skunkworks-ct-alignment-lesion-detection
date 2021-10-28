@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.GUI.scan_viewer module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ai_ct_scans.GUI.ui_stack_window module" href="ai_ct_scans.GUI.ui_stack_window.html" />
+    <link rel="prev" title="ai_ct_scans.GUI.image_viewer module" href="ai_ct_scans.GUI.image_viewer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="ai_ct_scans.GUI.html">ai_ct_scans.GUI package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+          <li><a href="ai_ct_scans.GUI.html">ai_ct_scans.GUI package</a> &raquo;</li>
+      <li>ai_ct_scans.GUI.scan_viewer module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.GUI.scan_viewer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.GUI.scan_viewer">
+<span id="ai-ct-scans-gui-scan-viewer-module"></span><h1>ai_ct_scans.GUI.scan_viewer module<a class="headerlink" href="#module-ai_ct_scans.GUI.scan_viewer" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.GUI.scan_viewer.</span></span><span class="sig-name descname"><span class="pre">ScanViewer</span></span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PySide2.QtWidgets.QWidget</span></code></p>
+<p>Widget for displaying 3D scan data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.volume_plot">
+<span class="sig-name descname"><span class="pre">volume_plot</span></span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.volume_plot" title="Permalink to this definition"></a></dt>
+<dd><p>OpenGL 3D volume plot item</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>pyqtgraph.opengl.GLVolumeItem</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.viewer_data">
+<span class="sig-name descname"><span class="pre">viewer_data</span></span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.viewer_data" title="Permalink to this definition"></a></dt>
+<dd><p>preprocessed array of scan data in format (x, y, z, RGBA)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.Ui">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Ui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.Ui" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.convert_for_viewer">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">convert_for_viewer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pointcloud</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.convert_for_viewer" title="Permalink to this definition"></a></dt>
+<dd><p>Convert scan data into 3D pointcloud matrix of RGBA values for displaying.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pointcloud</strong> (<em>np.ndarray</em>) – np.ndarray representing 3D scan data.</p></li>
+<li><p><strong>colour</strong> (<em>tuple</em>) – RGBA value to apply to pointcloud.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>array of format (x, y, z, RGBA) for display.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.display_data">
+<span class="sig-name descname"><span class="pre">display_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slice_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slice_through_scan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_navigation_slice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.display_data" title="Permalink to this definition"></a></dt>
+<dd><p>Update display to show scan with specific slicing or overlay.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slice_index</strong> (<em>int</em>) – Index of slice used to display or augment the displayed data.</p></li>
+<li><p><strong>orientation</strong> (<em>int</em>) – Slice orientation value.</p></li>
+<li><p><strong>slice_through_scan</strong> (<em>bool</em>) – Flag for specifying showing the cross section of the scan.</p></li>
+<li><p><strong>show_navigation_slice</strong> (<em>bool</em>) – Flag for adding the current slice location as plane to scan.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.pre_process_data">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">pre_process_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.pre_process_data" title="Permalink to this definition"></a></dt>
+<dd><p>Covert scan data into (x, y, z, RGBA) and combine into single structure for display.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – dictionary of np.ndarray, labelled ‘scan_1’, ‘scan_2’ for each full scan item.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>array of format (x, y, z, RGBA)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.set_data">
+<span class="sig-name descname"><span class="pre">set_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.set_data" title="Permalink to this definition"></a></dt>
+<dd><p>Preprocess scan data and add to OpenGL plot item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – dictionary of np.ndarray, labelled ‘scan_1’, ‘scan_2 for each full scan item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.GUI.scan_viewer.ScanViewer.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;PySide2.QtCore.QMetaObject</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ai_ct_scans.GUI.scan_viewer.ScanViewer.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.GUI.image_viewer.html" class="btn btn-neutral float-left" title="ai_ct_scans.GUI.image_viewer module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai_ct_scans.GUI.ui_stack_window.html" class="btn btn-neutral float-right" title="ai_ct_scans.GUI.ui_stack_window module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

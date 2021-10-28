@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.phase_correlation module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ai_ct_scans.phase_correlation_image_processing module" href="ai_ct_scans.phase_correlation_image_processing.html" />
+    <link rel="prev" title="ai_ct_scans.non_rigid_alignment module" href="ai_ct_scans.non_rigid_alignment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_loading.html">ai_ct_scans.data_loading module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_writing.html">ai_ct_scans.data_writing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.image_processing_utils.html">ai_ct_scans.image_processing_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.keypoint_alignment.html">ai_ct_scans.keypoint_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.model_trainers.html">ai_ct_scans.model_trainers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.models.html">ai_ct_scans.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.non_rigid_alignment.html">ai_ct_scans.non_rigid_alignment module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ai_ct_scans.phase_correlation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation_image_processing.html">ai_ct_scans.phase_correlation_image_processing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.point_matching.html">ai_ct_scans.point_matching module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.scan_tool.html">ai_ct_scans.scan_tool module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.sectioning.html">ai_ct_scans.sectioning module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+      <li>ai_ct_scans.phase_correlation module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.phase_correlation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.phase_correlation">
+<span id="ai-ct-scans-phase-correlation-module"></span><h1>ai_ct_scans.phase_correlation module<a class="headerlink" href="#module-ai_ct_scans.phase_correlation" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.phase_correlation.align_via_phase_correlation_2d">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.phase_correlation.</span></span><span class="sig-name descname"><span class="pre">align_via_phase_correlation_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.phase_correlation.align_via_phase_correlation_2d" title="Permalink to this definition"></a></dt>
+<dd><p>Aligns 2D image_2 to 2D image_1 via phase correlation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_1</strong> (<em>np.ndarray</em>) – An image</p></li>
+<li><p><strong>image_2</strong> (<em>np.ndarray</em>) – An image, expected to be similar to image_1 with a translation being the major transform</p></li>
+<li><p><strong>them</strong> (<em>between</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>image_2 after shifting to align with image_1</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.phase_correlation.find_shift_via_phase_correlation_2d">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.phase_correlation.</span></span><span class="sig-name descname"><span class="pre">find_shift_via_phase_correlation_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.phase_correlation.find_shift_via_phase_correlation_2d" title="Permalink to this definition"></a></dt>
+<dd><p>Get the shift from 2D image_1 to 2D image_2 via phase correlation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image_1</strong> (<em>np.ndarray</em>) – An image</p></li>
+<li><p><strong>image_2</strong> (<em>np.ndarray</em>) – An image, expected to be similar to image_1 with a translation being the major</p></li>
+<li><p><strong>transform</strong> – </p></li>
+<li><p><strong>them</strong> (<em>between</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The [col, row] translation between image_1 and image_2</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.phase_correlation.shift_image_2d">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.phase_correlation.</span></span><span class="sig-name descname"><span class="pre">shift_image_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.phase_correlation.shift_image_2d" title="Permalink to this definition"></a></dt>
+<dd><p>Shifts image by shift via skimage SimilarityTransform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>np.ndarray</em>) – An image</p></li>
+<li><p><strong>shift</strong> (<em>np.ndarray</em>) – Two ints</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.phase_correlation.shift_nd">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.phase_correlation.</span></span><span class="sig-name descname"><span class="pre">shift_nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.phase_correlation.shift_nd" title="Permalink to this definition"></a></dt>
+<dd><p>Shifts an image across an arbitrary number of dimensions by a vector shift defining the shift in each dimension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>ndarray</em>) – an image</p></li>
+<li><p><strong>shift</strong> (<em>ndarray</em>) – 1D vector of ints by which to shift the image</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The original image, shifted by the specified amount, with border regions filled in with zeros</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.phase_correlation.shift_via_phase_correlation_nd">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.phase_correlation.</span></span><span class="sig-name descname"><span class="pre">shift_via_phase_correlation_nd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_lmr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_zero_crossings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmr_filter_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmr_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_crossings_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.phase_correlation.shift_via_phase_correlation_nd" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the shift between the zeroth image and all images (including zeroth) in a list of n-dimensional images
+via phase correlation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lmr_filter_type</strong> (<em>filter</em>) – (None or ndarray): The filter to apply to find the local mean, typically a shape centred at</p></li>
+<li><p><strong>[</strong><strong>0</strong> (<em>at</em>) – </p></li>
+<li><p><strong>0</strong><strong>]</strong> – </p></li>
+<li><p><strong>apply_zero_crossings</strong> (<em>0</em><em>]</em>) – whether to mask images to points where the images cross zero before finding shift,</p></li>
+<li><p><strong>zero_crossings_thresh</strong> (<em>float</em><em> or </em><em>'auto'</em>) – The amount by which adjacent pixel values must differ while crossing 0</p></li>
+<li><p><strong>'auto'</strong> (<em>to be counted as a crossing point. If</em>) – </p></li>
+<li><p><strong>the</strong> (<em>chooses the bin edge value prior to the maximum counts in</em>) – </p></li>
+<li><p><strong>values</strong> (<em>smoothed histogram of pixel</em>) – </p></li>
+<li><p><strong>lmr_radius</strong> (<em>float</em>) – if lmr_filter_type is none, an n dimensional circle of radius lmr_radius is used as the</p></li>
+<li><p><strong>lmr_filter_type</strong> – The filter to apply to find the local mean, typically a shape centred</p></li>
+<li><p><strong>[</strong><strong>0</strong> – whether to mask images to points where the images cross zero before</p></li>
+<li><p><strong>apply_zero_crossings</strong> – whether to mask images to points where the images cross zero before</p></li>
+<li><p><strong>shift</strong> (<em>finding</em>) – </p></li>
+<li><p><strong>step</strong> (<em>effectively a weighted edge detection</em>) – </p></li>
+<li><p><strong>apply_lmr</strong> (<em>bool</em>) – whether to apply local mean removal before optionally appling zero crossings and then shift</p></li>
+<li><p><strong>points</strong> (<em>detection - recommended to use this if using apply_zero_crossings as it should create more zero crossing</em>) – </p></li>
+<li><p><strong>images</strong> (<em>list of ndarrays</em>) – The set of images to discover shifts relative to the zeroth image for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The [(row, col, depth, dimension_4, …)_0, …] shift from images[0] to overlay on
+images[n]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list of tuples)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.phase_correlation.shifts_via_local_region">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.phase_correlation.</span></span><span class="sig-name descname"><span class="pre">shifts_via_local_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_widths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_lmr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_zero_crossings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmr_filter_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmr_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zero_crossings_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.phase_correlation.shifts_via_local_region" title="Permalink to this definition"></a></dt>
+<dd><p>Find the shifts between images using a reduced view extracted around the same coordinates in each image,
+optionally pre-processing via local mean removal and zero crossings before applying phase correlation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>images</strong> (<em>list of ndarrays</em>) – The set of images to discover shifts relative to the zeroth image for</p></li>
+<li><p><strong>local_coords</strong> (<em>list of ints</em>) – The coordinates of the central point of interest in both images</p></li>
+<li><p><strong>region_widths</strong> (<em>tuple of tuples of ints</em><em> or </em><em>tuple of ints</em>) – The spacing either side of the local coordinate to</p></li>
+<li><p><strong>dimension</strong> (<em>extract a slice of the images with. Can either be a single int for each</em>) – </p></li>
+<li><p><strong>symmetric</strong> (<em>i.e. take a</em>) – </p></li>
+<li><p><strong>spacing</strong> – </p></li>
+<li><p><strong>2</strong> (<em>or a tuple of tuples of ints where each sub-tuple is length</em>) – </p></li>
+<li><p><strong>of</strong> (<em>i.e. a different spacing either side</em>) – </p></li>
+<li><p><strong>coordinate</strong> (<em>local</em>) – </p></li>
+<li><p><strong>apply_lmr</strong> (<em>bool</em>) – whether to apply local mean removal before optionally appling zero crossings and then shift</p></li>
+<li><p><strong>apply_zero_crossings</strong> (<em>bool</em>) – whether to mask images to points where the images cross zero before finding shift,</p></li>
+<li><p><strong>step</strong> (<em>effectively a weighted edge detection</em>) – </p></li>
+<li><p><strong>lmr_filter_type</strong> (<em>None</em><em> or </em><em>ndarray</em>) – The filter to apply to find the local mean, typically a shape centred at</p></li>
+<li><p><strong>[</strong><strong>0</strong> – </p></li>
+<li><p><strong>0</strong><strong>]</strong> – </p></li>
+<li><p><strong>lmr_radius</strong> (<em>float</em>) – if lmr_filter_type is none, an n dimensional circle of radius lmr_radius is used as the</p></li>
+<li><p><strong>filter</strong> – </p></li>
+<li><p><strong>zero_crossings_thresh</strong> (<em>float</em><em> or </em><em>'auto'</em>) – The amount by which adjacent pixel values must differ while crossing 0</p></li>
+<li><p><strong>crossing</strong> (<em>to be counted as a</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A vector shift for each each image in images relative to the zeroth image (including
+self-shift at the zeroth output position)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(list of ndarrays)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.non_rigid_alignment.html" class="btn btn-neutral float-left" title="ai_ct_scans.non_rigid_alignment module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai_ct_scans.phase_correlation_image_processing.html" class="btn btn-neutral float-right" title="ai_ct_scans.phase_correlation_image_processing module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

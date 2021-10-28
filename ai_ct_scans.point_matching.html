@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.point_matching module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ai_ct_scans.scan_tool module" href="ai_ct_scans.scan_tool.html" />
+    <link rel="prev" title="ai_ct_scans.phase_correlation_image_processing module" href="ai_ct_scans.phase_correlation_image_processing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_loading.html">ai_ct_scans.data_loading module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_writing.html">ai_ct_scans.data_writing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.image_processing_utils.html">ai_ct_scans.image_processing_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.keypoint_alignment.html">ai_ct_scans.keypoint_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.model_trainers.html">ai_ct_scans.model_trainers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.models.html">ai_ct_scans.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.non_rigid_alignment.html">ai_ct_scans.non_rigid_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation.html">ai_ct_scans.phase_correlation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation_image_processing.html">ai_ct_scans.phase_correlation_image_processing module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ai_ct_scans.point_matching module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.scan_tool.html">ai_ct_scans.scan_tool module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.sectioning.html">ai_ct_scans.sectioning module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+      <li>ai_ct_scans.point_matching module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.point_matching.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.point_matching">
+<span id="ai-ct-scans-point-matching-module"></span><h1>ai_ct_scans.point_matching module<a class="headerlink" href="#module-ai_ct_scans.point_matching" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.point_matching.abs_dist_cost_matrix">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.point_matching.</span></span><span class="sig-name descname"><span class="pre">abs_dist_cost_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points_2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.point_matching.abs_dist_cost_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Generates the cost matrix suitable for scipy.optimize.linear_sum_assignment between two sets of points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points_1</strong> (<em>np.ndarray</em>) – A set of points with dimensions (point index, number of spatial dimensions)</p></li>
+<li><p><strong>points_2</strong> (<em>np.ndarray</em>) – A set of points with dimensions (point index, number of spatial dimensions)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The Euclidean distances between
+pairs of points in points_1 and points_2 such that the distance from pair points_1[i] points_2[j] occurs at
+position (j, i) in output</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray of shape (points_1.shape[0], points_2.shape[0]))</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.point_matching.match_indices">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.point_matching.</span></span><span class="sig-name descname"><span class="pre">match_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points_1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.point_matching.match_indices" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the zeroth-dimension indices in points_1 that match zeroth-dimension elements of points_2 such that the linear
+sum assignment of Euclidean distance costs are minimised</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points_0</strong> (<em>np.ndarray</em>) – np.ndarray</p></li>
+<li><p><strong>points_1</strong> (<em>np.ndarray</em>) – np.ndarray</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Each list will contain the integer indicies such that matching, ordered point
+sets are recovered via points_0[return_val[1]] closest matches are points_1[return_val[0]]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(tuple of two lists of ints)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.phase_correlation_image_processing.html" class="btn btn-neutral float-left" title="ai_ct_scans.phase_correlation_image_processing module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai_ct_scans.scan_tool.html" class="btn btn-neutral float-right" title="ai_ct_scans.scan_tool module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

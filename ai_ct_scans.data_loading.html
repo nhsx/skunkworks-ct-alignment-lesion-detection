@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai_ct_scans.data_loading module &mdash; NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ai_ct_scans.data_writing module" href="ai_ct_scans.data_writing.html" />
+    <link rel="prev" title="ai_ct_scans.GUI.viewer_widget module" href="ai_ct_scans.GUI.viewer_widget.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ai_ct_scans</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="ai_ct_scans.html">ai_ct_scans package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ai_ct_scans.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="ai_ct_scans.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ai_ct_scans.data_loading module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.data_writing.html">ai_ct_scans.data_writing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.image_processing_utils.html">ai_ct_scans.image_processing_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.keypoint_alignment.html">ai_ct_scans.keypoint_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.model_trainers.html">ai_ct_scans.model_trainers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.models.html">ai_ct_scans.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.non_rigid_alignment.html">ai_ct_scans.non_rigid_alignment module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation.html">ai_ct_scans.phase_correlation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.phase_correlation_image_processing.html">ai_ct_scans.phase_correlation_image_processing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.point_matching.html">ai_ct_scans.point_matching module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.scan_tool.html">ai_ct_scans.scan_tool module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ai_ct_scans.sectioning.html">ai_ct_scans.sectioning module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">ai_ct_scans</a> &raquo;</li>
+          <li><a href="ai_ct_scans.html">ai_ct_scans package</a> &raquo;</li>
+      <li>ai_ct_scans.data_loading module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ai_ct_scans.data_loading.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ai_ct_scans.data_loading">
+<span id="ai-ct-scans-data-loading-module"></span><h1>ai_ct_scans.data_loading module<a class="headerlink" href="#module-ai_ct_scans.data_loading" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.BodyPartLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">BodyPartLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_part</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_on_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.BodyPartLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class providing intuitive loading of DICOM data, scan-order-wise for a particular body part</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.BodyPartLoader.scan_1">
+<span class="sig-name descname"><span class="pre">scan_1</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.BodyPartLoader.scan_1" title="Permalink to this definition"></a></dt>
+<dd><p>A ScanLoader for the former scan of a particular body part</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ai_ct_scans.data_loading.ScanLoader" title="ai_ct_scans.data_loading.ScanLoader">ScanLoader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.BodyPartLoader.scan_2">
+<span class="sig-name descname"><span class="pre">scan_2</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.BodyPartLoader.scan_2" title="Permalink to this definition"></a></dt>
+<dd><p>A ScanLoader for the latter scan of a particular body part</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ai_ct_scans.data_loading.ScanLoader" title="ai_ct_scans.data_loading.ScanLoader">ScanLoader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.MultiPatientAxialStreamer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">MultiPatientAxialStreamer</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.MultiPatientAxialStreamer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for streaming either random or sequential axial images from the CT dataset</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.MultiPatientAxialStreamer.reset_indices">
+<span class="sig-name descname"><span class="pre">reset_indices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.MultiPatientAxialStreamer.reset_indices" title="Permalink to this definition"></a></dt>
+<dd><p>Set all the indices back to zero - useful for switching from random to sequential streaming</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.MultiPatientAxialStreamer.stream_next">
+<span class="sig-name descname"><span class="pre">stream_next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.MultiPatientAxialStreamer.stream_next" title="Permalink to this definition"></a></dt>
+<dd><p>Get the next image from the streamer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>threshold</strong> (<em>int</em><em> or </em><em>None</em>) – Minimum value within a streamed image to accept the streamed image. If this</p></li>
+<li><p><strong>met</strong> (<em>threshold isn't</em>) – </p></li>
+<li><p><strong>above</strong> (<em>move on to the next image in the stream until one is found that has pixels</em>) – </p></li>
+<li><p><strong>threshold=500</strong> (<em>this thres. Useful for ignoring all-air images in the dataset with</em>) – </p></li>
+<li><p><strong>random</strong> (<em>bool</em>) – Whether to randomly select images from the dataset (True) or step through sequentially</p></li>
+<li><p><strong>(</strong><strong>False</strong><strong>)</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>2D image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.MultiPatientLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">MultiPatientLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_on_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.MultiPatientLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class providing intuitive loading of DICOM data patient-wise, scan-order-wise and body-region-wise</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.MultiPatientLoader.root_dir">
+<span class="sig-name descname"><span class="pre">root_dir</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.MultiPatientLoader.root_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Path to the top level directory that stores multiple patient scans</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>pathlib Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.MultiPatientLoader.patient_paths">
+<span class="sig-name descname"><span class="pre">patient_paths</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.MultiPatientLoader.patient_paths" title="Permalink to this definition"></a></dt>
+<dd><p>A natsorted list of paths to directories of patients, where each patient
+is expected to be stored in a purely numeric directory name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of pathlib Paths</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.MultiPatientLoader.patients">
+<span class="sig-name descname"><span class="pre">patients</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.MultiPatientLoader.patients" title="Permalink to this definition"></a></dt>
+<dd><p>A list of PatientLoaders, one per patient in patient_paths, with the same
+ordering</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of PatientLoaders</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.PatientLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">PatientLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_on_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.PatientLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class providing intuitive loading of DICOM data patient-wise, scan-order-wise and body-region-wise</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.PatientLoader.abdo">
+<span class="sig-name descname"><span class="pre">abdo</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.PatientLoader.abdo" title="Permalink to this definition"></a></dt>
+<dd><p>A BodyPartLoader for the abdomen of a patient</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ai_ct_scans.data_loading.BodyPartLoader" title="ai_ct_scans.data_loading.BodyPartLoader">BodyPartLoader</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">ScanLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_on_load</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class providing intuitive loading of DICOM data, for a single scan for a single body part</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.dicom_paths">
+<span class="sig-name descname"><span class="pre">dicom_paths</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.dicom_paths" title="Permalink to this definition"></a></dt>
+<dd><p>All the paths to dicom files within a given scan directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list of pathlib Paths</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.full_scan">
+<span class="sig-name descname"><span class="pre">full_scan</span></span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.full_scan" title="Permalink to this definition"></a></dt>
+<dd><p>The entire scan loaded as a 3D ndarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.ndarray or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.clear_scan">
+<span class="sig-name descname"><span class="pre">clear_scan</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.clear_scan" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the full_scan to none</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.delete_memmap">
+<span class="sig-name descname"><span class="pre">delete_memmap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.delete_memmap" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.full_scan_to_memmap">
+<span class="sig-name descname"><span class="pre">full_scan_to_memmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.full_scan_to_memmap" title="Permalink to this definition"></a></dt>
+<dd><p>Send the 3D data to two numpy memmaps, with filename-embedded shapes that allows for reloading. Default to
+the same directory as the DICOM data. Second memmap is first and second axes (0-indexed) swapped, to enable
+faster slicing during DL training</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>normalise</strong> (<em>bool</em>) – whether to normalise the data upon saving to memmap</p></li>
+<li><p><strong>directory</strong> (<em>pathlib Path</em>) – directory in which to save the memmap</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.load_2d_array">
+<span class="sig-name descname"><span class="pre">load_2d_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_rescale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_z_rescale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.load_2d_array" title="Permalink to this definition"></a></dt>
+<dd><p>Loads the pixel array from the dicom at position index in self.dicom_paths</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ignore_z_rescale</strong> (<em>bool</em>) – If True, do not store the z location of the slice for later axial rescaling in the</p></li>
+<li><p><strong>view.</strong> (<em>full 3D</em>) – </p></li>
+<li><p><strong>ignore_rescale</strong> (<em>bool</em>) – If True, load raw data without rescaling, otherwise rescale in accordance with state</p></li>
+<li><p><strong>self.rescale_on_load</strong> (<em>of</em>) – </p></li>
+<li><p><strong>index</strong> (<em>int</em>) – Scans are ordered I0 … IN in the original directory. This arg sets the N to load</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(np.ndarray) A 2D slice of the scan</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.load_full_memmap">
+<span class="sig-name descname"><span class="pre">load_full_memmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normalise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.load_full_memmap" title="Permalink to this definition"></a></dt>
+<dd><p>Loads the numpy memmapped version of the full scan, or creates it if it doesn’t yet exist</p>
+<p>Returns (None):</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.load_memmap_and_clear_scan">
+<span class="sig-name descname"><span class="pre">load_memmap_and_clear_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normalise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.load_memmap_and_clear_scan" title="Permalink to this definition"></a></dt>
+<dd><p>Loads the memmap of the scan and clears the in-memory scan</p>
+<p>Returns (None):</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.load_patient_metadata">
+<span class="sig-name descname"><span class="pre">load_patient_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.load_patient_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Load relevant patient metadata.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.load_scan">
+<span class="sig-name descname"><span class="pre">load_scan</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.load_scan" title="Permalink to this definition"></a></dt>
+<dd><p>Loads the entire 3D scan into memory, optionally rescaling transverse plane views to build the stack
+according to whether self.rescale_on_load is True or False</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The full 3D data of the scan, excluding metadata</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(np.ndarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.mean_axial_thickness">
+<span class="sig-name descname"><span class="pre">mean_axial_thickness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.mean_axial_thickness" title="Permalink to this definition"></a></dt>
+<dd><p>Get the average axial layer thickness of the scan</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The average thickness of axial layers in the scan</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.raw_transverse_pixel_spacing_and_shape">
+<span class="sig-name descname"><span class="pre">raw_transverse_pixel_spacing_and_shape</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.raw_transverse_pixel_spacing_and_shape" title="Permalink to this definition"></a></dt>
+<dd><p>Get the original pixel array shape for the transverse plane of the scan, its pixel spacing</p>
+<dl class="simple">
+<dt>Returns (tuple of tuple of ints and ndarray):</dt><dd><p>The original pixel array shape for the transverse plane of the scan and its pixel spacing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.ScanLoader.rescale_depth">
+<span class="sig-name descname"><span class="pre">rescale_depth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.ScanLoader.rescale_depth" title="Permalink to this definition"></a></dt>
+<dd><p>Rescale the full 3D scan along depth based on the ContentTime difference between last and first scans and total
+slice number</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.data_root_directory">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">data_root_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.data_root_directory" title="Permalink to this definition"></a></dt>
+<dd><p>Get a path to the top level data directory. Checks whether you have created the local store of data at the expected
+location and returns that as default if found, otherwise returns the location on the shared folder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(pathlib Path)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.dir_dicom_paths">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">dir_dicom_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.dir_dicom_paths" title="Permalink to this definition"></a></dt>
+<dd><p>Return list of paths to files within a directory at any level below, beginning with ‘I’. This is the naming
+convention expected for the project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>directory</strong> (<em>pathlib Path</em>) – A path</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list of pathlib Paths) All paths to files beginning with ‘I’ within the given directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.load_memmap">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">load_memmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float64'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.load_memmap" title="Permalink to this definition"></a></dt>
+<dd><p>Load a memmap array with an expected naming convention of the form
+[prefix]__[shape element 1]_[shape_element 2]_…_[shape element n].npy</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>pathlib Path</em>) – path to the memmap</p></li>
+<li><p><strong>dtype</strong> (<em>str</em><em> or </em><em>valid numpy dtype</em>) – the data type the memmap was saved as</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A memmap ndarray</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(np.memmap)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ai_ct_scans.data_loading.load_validation_set">
+<span class="sig-prename descclassname"><span class="pre">ai_ct_scans.data_loading.</span></span><span class="sig-name descname"><span class="pre">load_validation_set</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.data_loading.load_validation_set" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai_ct_scans.GUI.viewer_widget.html" class="btn btn-neutral float-left" title="ai_ct_scans.GUI.viewer_widget module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ai_ct_scans.data_writing.html" class="btn btn-neutral float-right" title="ai_ct_scans.data_writing module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Crown copyright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -272,7 +272,7 @@ Outputs of a pre-trained vit_small model provided by the DINO authors, and of th
 ### Experiments
 
 To run experiments:
-* Install experiment requirements ```pip install -e .[experiments]```.
+* Install experiment requirements ```pip install -e ".[experiments]"```.
 * Run via web interface:
     * Run ```jupyter notebook [path to notebooks]```
     * Navigate to the web interface via the path given in the terminal (this may happen automatically).

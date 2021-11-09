@@ -12,12 +12,11 @@
 
 As the successful candidate from the AI Skunkworks problem-sourcing programme, CT Alignment and Lesion Detection was first picked as a pilot project for the AI Skunkworks team in April 2021.
 
-## Intended Purpose
+## Intended Use
 
 This proof of concept ([TRL 4](https://en.wikipedia.org/wiki/Technology_readiness_level)) is intended to demonstrate the technical validity of applying phase correlation, coherent point detection and deep learning techniques to CT scans in order to align multiple scans and detect lesions. It is not intended for deployment in a clinical or non-clinical setting without further development and compliance with the [UK Medical Device Regulations 2002](https://www.legislation.gov.uk/uksi/2002/618/contents/made) where the product qualifies as a medical device.
 
 ![Screenshot of tool using CPD to align two CT scans using publicly available data from [tcia]](docs/ct-tool-cpd.png)
-
 
 ## Data Protection
 
@@ -61,6 +60,10 @@ The data flow from capture, governance, ingest, processing, and display is shown
 ![Data Flow Diagram ](docs/data_flow.png)
 
 ## Getting Started
+
+Watch a walkthrough on getting started with this tool on [Youtube](https://www.youtube.com/watch?v=QygOnGLcszk):
+
+[![A screenshot of a walkthrough video](http://img.youtube.com/vi/QygOnGLcszk/0.jpg)](http://www.youtube.com/watch?v=QygOnGLcszk "CT Alignment and Lesion Detection Walkthrough")
 
 ### Development
 

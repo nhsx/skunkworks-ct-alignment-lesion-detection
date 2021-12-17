@@ -26,6 +26,8 @@ Example data shown in screenshots or video demonstrations are sourced from the [
 
 ## Background
 
+> The full [technical report (PDF)](docs/NHS_AI_Lab_Skunkworks_CT_Alignment_Lesion_Detection_Technical_Report.pdf) is available to download.
+
 This 12 week research project has focussed on how to identify features in a CT scan and automatically align their scan "slices" to enable early detection, diagnosis and, later, the treatment of lesions (tissue growth).
 
 Comparing CT scans is a labour-intensive task. Currently there are no satisfactory automation tools that can speed up the process. Difficulties in aligning scans 100% accurately make it hard for radiologists to accurately measure changes.

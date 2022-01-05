@@ -1,9 +1,9 @@
 name: Build and Deploy Docs
 
-on: 
+on:
   push:
-    branches-ignore: 
-      - 'gh-pages'
+    branches-ignore:
+      - "gh-pages"
 
 jobs:
   deploy:
@@ -13,11 +13,10 @@ jobs:
       cycpd-directory: ./cycpd
       docs-directory: ./ct-alignment/docs
     steps:
-    
       - uses: actions/checkout@v2
         with:
           path: ${{ env.repo-directory }}
-            
+
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
@@ -45,22 +44,23 @@ jobs:
           path: ${{ env.cycpd-directory }}
 
       - name: Install cycpd
-        working-directory: ${{ env.cycpd-directory }} 
+        working-directory: ${{ env.cycpd-directory }}
         run: |
           pip install -e.
-      
+
       - name: Build docs
         working-directory: ${{ env.docs-directory }}
         run: |
           make html
-          
+
       - name: Copy images
         working-directory: ${{ env.docs-directory }}
         run: |
           mkdir -p build/html/docs
           cp *.png build/html/docs/
           cp ctcopy.sh build/html/docs/
-          
+          cp *.pdf build/html/docs/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

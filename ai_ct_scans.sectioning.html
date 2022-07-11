@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -90,7 +91,7 @@
            <div itemprop="articleBody">
              
   <section id="module-ai_ct_scans.sectioning">
-<span id="ai-ct-scans-sectioning-module"></span><h1>ai_ct_scans.sectioning module<a class="headerlink" href="#module-ai_ct_scans.sectioning" title="Permalink to this headline"></a></h1>
+<span id="ai-ct-scans-sectioning-module"></span><h1>ai_ct_scans.sectioning module<a class="headerlink" href="#module-ai_ct_scans.sectioning" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ai_ct_scans.sectioning.CTEllipsoidFitter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">CTEllipsoidFitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_area_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_eccentricity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_ellipse_long_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ellipse_long_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ellipse_contour_centre_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_area</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.CTEllipsoidFitter" title="Permalink to this definition"></a></dt>
@@ -181,7 +182,7 @@ treated as background in the ellipse fitter, so an offset will have been applied
 <dl class="py class">
 <dt class="sig sig-object py" id="ai_ct_scans.sectioning.DinoSectioner">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">DinoSectioner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4628.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples_per_image</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ai_ct_scans.sectioning.DinoSectioner" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#ai_ct_scans.sectioning.TextonSectioner" title="ai_ct_scans.sectioning.TextonSectioner"><code class="xref py py-class docutils literal notranslate"><span class="pre">ai_ct_scans.sectioning.TextonSectioner</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#ai_ct_scans.sectioning.TextonSectioner" title="ai_ct_scans.sectioning.TextonSectioner"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextonSectioner</span></code></a></p>
 <p>Class for using DINO-trained models to section images. Much of the code is refactored from the DINO repository,
 itself stored in ai_ct_scans.dino.</p>
 <dl class="py method">
@@ -395,7 +396,7 @@ by previous sub-clusterers</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ai_ct_scans.sectioning.MeanShiftWithProbs">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ai_ct_scans.sectioning.</span></span><span class="sig-name descname"><span class="pre">MeanShiftWithProbs</span></span><a class="headerlink" href="#ai_ct_scans.sectioning.MeanShiftWithProbs" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.cluster._mean_shift.MeanShift</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MeanShift</span></code></p>
 <p>A class for getting probability predictions of class membership using the sklearn MeanShift algorithm</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ai_ct_scans.sectioning.MeanShiftWithProbs.fit">

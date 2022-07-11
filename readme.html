@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -106,23 +107,23 @@
 <a class="reference external image-reference" href="https://github.com/GIScience/badges#experimental"><img alt="status: experimental" src="https://github.com/GIScience/badges/raw/master/status/experimental.svg" /></a>
 <!-- Add in additional badges as appropriate --><a class="reference external image-reference" href="docs/banner.png"><img alt="Banner of NHS AI Lab Skunkworks" src="docs/banner.png" /></a>
 <section id="nhs-ai-lab-skunkworks-project-ct-alignment-and-lesion-detection">
-<h1>NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection<a class="headerlink" href="#nhs-ai-lab-skunkworks-project-ct-alignment-and-lesion-detection" title="Permalink to this headline"></a></h1>
+<h1>NHS AI Lab Skunkworks project: CT Alignment and Lesion Detection<a class="headerlink" href="#nhs-ai-lab-skunkworks-project-ct-alignment-and-lesion-detection" title="Permalink to this heading"></a></h1>
 <blockquote>
 <div><p>A pilot project for the NHS AI (Artificial Intelligence) Lab Skunkworks team, CT Alignment and Lesion detection uses a range of classical and machine learning computer vision techniques to align and detect lesions in anomyised CT scans over time from George Eliot Hospital NHS Trust.</p>
 </div></blockquote>
 <p>As the successful candidate from the AI Skunkworks problem-sourcing programme, CT Alignment and Lesion Detection was first picked as a pilot project for the AI Skunkworks team in April 2021.</p>
 <section id="intended-use">
-<h2>Intended Use<a class="headerlink" href="#intended-use" title="Permalink to this headline"></a></h2>
+<h2>Intended Use<a class="headerlink" href="#intended-use" title="Permalink to this heading"></a></h2>
 <p>This proof of concept (<a class="reference external" href="https://en.wikipedia.org/wiki/Technology_readiness_level">TRL 4</a>) is intended to demonstrate the technical validity of applying phase correlation, coherent point detection and deep learning techniques to CT scans in order to align multiple scans and detect lesions. It is not intended for deployment in a clinical or non-clinical setting without further development and compliance with the <a class="reference external" href="https://www.legislation.gov.uk/uksi/2002/618/contents/made">UK Medical Device Regulations 2002</a> where the product qualifies as a medical device.</p>
 <a class="reference external image-reference" href="docs/ct-tool-cpd.png"><img alt="Screenshot of tool using CPD to align two CT scans using publicly available data from [tcia]" src="docs/ct-tool-cpd.png" /></a>
 </section>
 <section id="data-protection">
-<h2>Data Protection<a class="headerlink" href="#data-protection" title="Permalink to this headline"></a></h2>
+<h2>Data Protection<a class="headerlink" href="#data-protection" title="Permalink to this heading"></a></h2>
 <p>This project was subject to a Data Protection Impact Assessment (DPIA), ensuring the protection of the data used in line with the <a class="reference external" href="https://www.legislation.gov.uk/ukpga/2018/12/contents/enacted">UK Data Protection Act 2018</a> and <a class="reference external" href="https://ico.org.uk/for-organisations/dp-at-the-end-of-the-transition-period/data-protection-and-the-eu-in-detail/the-uk-gdpr/">UK GDPR</a>. No data or trained models are shared in this repository.</p>
 <p>Example data shown in screenshots or video demonstrations are sourced from the <a class="reference external" href="https://doi.org/10.7937/k9/tcia.2018.3r3juisw">National Cancer Institute Clinical Proteomic Tumor Analysis Consortium (CPTAC). (2018). Radiology Data from the Clinical Proteomic Tumor Analysis Consortium Uterine Corpus Endometrial Carcinoma [CPTAC-UCEC] Collection [Data set]. The Cancer Imaging Archive</a> in line with the <a class="reference external" href="https://wiki.cancerimagingarchive.net/display/Public/Data+Usage+Policies+and+Restrictions">TCIA Data Usage Policies and Restrictions</a>.</p>
 </section>
 <section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline"></a></h2>
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p>The full <a class="reference external" href="docs/NHS_AI_Lab_Skunkworks_CT_Alignment_Lesion_Detection_Technical_Report.pdf">technical report (PDF)</a> is available to download.</p>
 </div></blockquote>
@@ -131,7 +132,7 @@
 <p>The project aims to support radiologists by comparing two CT scans taken at different dates, to see if a patient has improved or deteriorated.</p>
 <p>The project explores how AI might identify organs and lesions, report the change in size, and highlight areas of concern to the radiologist and how algorithms could be developed to attempt alignment of images to assess the volume of a lesion in 3D.</p>
 <section id="model-selection">
-<h3>Model selection<a class="headerlink" href="#model-selection" title="Permalink to this headline"></a></h3>
+<h3>Model selection<a class="headerlink" href="#model-selection" title="Permalink to this heading"></a></h3>
 <p>This project broadly followed two major strands: the alignment of scans, and the detection and measuring of anomalies within each scan.</p>
 <p>For alignment, many computer vision techniques exist to align two visually similar images, and we aimed to trial several during the project. Phase correlation is an image registration method that can detect shifts well, but not other affine transformations. As patients are guided into roughly the same orientation upon entering a scanner, and the scale at which the scan is taken is recorded, phase correlation was expected to be viable for alignment. To address non-rigid transformation requirements, keypoint-based methods in 2D and coherent point drift in 3D were both proposed.</p>
 <p>As the dataset was unlabelled, deep learning methods were restricted to unsupervised or self-supervised methods. A masked data prediction model was proposed and built for generalised anomaly detection, and Facebook Research’s open source DINO method was used to train vision transformer models for tissue segmentation.</p>
@@ -139,7 +140,7 @@
 </section>
 </section>
 <section id="known-limitations">
-<h2>Known Limitations<a class="headerlink" href="#known-limitations" title="Permalink to this headline"></a></h2>
+<h2>Known Limitations<a class="headerlink" href="#known-limitations" title="Permalink to this heading"></a></h2>
 <p>GUI Demonstration Tool:</p>
 <ul class="simple">
 <li><p>The demonstration tool and models have been built using CT scans with contrast generated on Siemens CT scanners with slice thickness between 1 and 5mm.</p></li>
@@ -150,29 +151,29 @@
 </ul>
 </section>
 <section id="data-pipeline">
-<h2>Data Pipeline<a class="headerlink" href="#data-pipeline" title="Permalink to this headline"></a></h2>
+<h2>Data Pipeline<a class="headerlink" href="#data-pipeline" title="Permalink to this heading"></a></h2>
 <p>The data flow from capture, governance, ingest, processing, and display is shown in the diagram below.</p>
 <a class="reference external image-reference" href="docs/data_flow.png"><img alt="Data Flow Diagram" src="docs/data_flow.png" /></a>
 </section>
 <section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
 <p>Watch a walkthrough on getting started with this tool on <a class="reference external" href="https://www.youtube.com/watch?v=QygOnGLcszk">Youtube</a>:</p>
 <a class="reference external image-reference" href="http://www.youtube.com/watch?v=QygOnGLcszk&quot;CTAlignmentandLesionDetectionWalkthrough&quot;"><img alt="A screenshot of a walkthrough video" src="http://img.youtube.com/vi/QygOnGLcszk/0.jpg" /></a>
 <section id="development">
-<h3>Development<a class="headerlink" href="#development" title="Permalink to this headline"></a></h3>
+<h3>Development<a class="headerlink" href="#development" title="Permalink to this heading"></a></h3>
 <p>All tools are contained within the <code class="docutils literal notranslate"><span class="pre">ai_ct_scans</span></code> directory.
 These are tested via a combination of unit and integration tests to check the desired behaviour.
 For testing of ML architectures ‘happy path’ testing is recommended, with a test driven development approach recommended for the wider software development lifecycle.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">experiments</span></code> directory contains scripted/Jupyter notebooks uses of tools in <code class="docutils literal notranslate"><span class="pre">ai_ct_scans</span></code> that produce useful/informative output for sprint reviews.</p>
 <section id="tests">
-<h4>Tests<a class="headerlink" href="#tests" title="Permalink to this headline"></a></h4>
+<h4>Tests<a class="headerlink" href="#tests" title="Permalink to this heading"></a></h4>
 <p>There is a test folder if you would like to test your setup. More information about how to run <code class="docutils literal notranslate"><span class="pre">pytests</span></code> can be found here: <code class="docutils literal notranslate"><span class="pre">https://docs.pytest.org/en/latest/how-to/usage.html</span></code>.</p>
 <p>To generate a set of test scans (white noise), from the repository directory run: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">experiments/dicom_test_data_generation/generate_test_files.py</span></code> which will populate <code class="docutils literal notranslate"><span class="pre">tests/fixtures</span></code> with a minimum set of files needed to test the GUI. Note that these test files will not allow testing of any models due to the lack of anatomical information included.</p>
 <p>It is recommended that <code class="docutils literal notranslate"><span class="pre">generate_test_files.py</span></code> is run in <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">experiments/dicom_test_data_generation/</span></code> directory.</p>
 </section>
 </section>
 <section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h3>
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h3>
 <p>Instructions for preparing the system for PyTorch available at <a class="reference external" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a>
 Use v1.9.0, installed via pip, Python 3.8/3.9, with CUDA 10.2 on local Windows machines and no CUDA on Linux CI.</p>
 <p>Steps:</p>
@@ -193,7 +194,7 @@ Use v1.9.0, installed via pip, Python 3.8/3.9, with CUDA 10.2 on local Windows m
 </div>
 </section>
 <section id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h3>
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h3>
 <p>HTML documentation for the project can be built using the following commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">napoleon</span>
@@ -207,9 +208,9 @@ Use v1.9.0, installed via pip, Python 3.8/3.9, with CUDA 10.2 on local Windows m
 <p>This repository automatically builds and deploys the documentation to <a class="reference external" href="https://nhsx.github.io/skunkworks-ct-alignment-lesion-detection">https://nhsx.github.io/skunkworks-ct-alignment-lesion-detection</a>.</p>
 </section>
 <section id="execution">
-<h3>Execution<a class="headerlink" href="#execution" title="Permalink to this headline"></a></h3>
+<h3>Execution<a class="headerlink" href="#execution" title="Permalink to this heading"></a></h3>
 <section id="scan-tool-gui">
-<h4>Scan Tool GUI<a class="headerlink" href="#scan-tool-gui" title="Permalink to this headline"></a></h4>
+<h4>Scan Tool GUI<a class="headerlink" href="#scan-tool-gui" title="Permalink to this heading"></a></h4>
 <p>The Scan Tool GUI requires a Python environment &gt;= 3.8.5. Metrics within the GUI are given in pixels (e.g. volume
 of ellipsoids, ellipsoid centre locations). The conversion factor to real units is 0.7mm/pixel.</p>
 <p>Example memory usage for the first patient in the dataset was around 4.5GB upon initial scan loading, and 6.9GB when the 3D view and ellipsoid detection were used.</p>
@@ -221,7 +222,7 @@ of ellipsoids, ellipsoid centre locations). The conversion factor to real units 
 </section>
 </section>
 <section id="data-structure-and-model-generation">
-<h3>Data Structure and Model Generation<a class="headerlink" href="#data-structure-and-model-generation" title="Permalink to this headline"></a></h3>
+<h3>Data Structure and Model Generation<a class="headerlink" href="#data-structure-and-model-generation" title="Permalink to this heading"></a></h3>
 <p>The GUI demonstration tool requires patient data to be provided in a specific data structure, including DICOM files and metadata for the scan data, serialised alignment transforms and models for tissue sectioning.
 The example shown below shows the file structure that the data loading module expects for the DICOM data with additional model files required by the GUI demonstration tool included.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>extra_data
@@ -252,7 +253,7 @@ The example shown below shows the file structure that the data loading module ex
 </pre></div>
 </div>
 <section id="sample-data">
-<h4>Sample data<a class="headerlink" href="#sample-data" title="Permalink to this headline"></a></h4>
+<h4>Sample data<a class="headerlink" href="#sample-data" title="Permalink to this heading"></a></h4>
 <p>Compatible publicly available CT scans for testing can be downloaded via <a class="reference external" href="https://doi.org/10.7937/k9/tcia.2018.3r3juisw">The Cancer Imaging Archive</a>:</p>
 <ol class="arabic simple">
 <li><p>Open the <a class="reference external" href="https://nbia.cancerimagingarchive.net/nbia-search/">TCIA Radiology Search Portal</a></p></li>
@@ -269,7 +270,7 @@ The example shown below shows the file structure that the data loading module ex
 <p>You will now be able to train the models and open the scans in the GUI tool.</p>
 </section>
 <section id="cpd-alignment-transform">
-<h4>CPD Alignment Transform<a class="headerlink" href="#cpd-alignment-transform" title="Permalink to this headline"></a></h4>
+<h4>CPD Alignment Transform<a class="headerlink" href="#cpd-alignment-transform" title="Permalink to this heading"></a></h4>
 <p>The GUI demonstration tool does not have the ability to calculate non-rigid alignment using Coherent Point Drift due to the time required.
 Instead, a precomputed transform can be loaded and applied for each patient loaded.
 The transform can be calculated, serialised and saved to disk using a dedicated CLI tool, <code class="docutils literal notranslate"><span class="pre">calculate-cpd-transform</span></code>, which should be run from the project folder.</p>
@@ -304,7 +305,7 @@ optional arguments:
 <p>In the case that the alignment transform is not found the remaining scan data will still be loaded, however the CPD alignment option will be removed.</p>
 </section>
 <section id="sectioning-model">
-<h4>Sectioning Model<a class="headerlink" href="#sectioning-model" title="Permalink to this headline"></a></h4>
+<h4>Sectioning Model<a class="headerlink" href="#sectioning-model" title="Permalink to this heading"></a></h4>
 <p>The GUI demonstration tool requires a tissue sectioning model, both for the tissue sectioning features and full anomaly detection capability.
 The model can be generated by running the following script:</p>
 <p><code class="docutils literal notranslate"><span class="pre">experiments/sectioning/measuring_w_blob_detector/train_sectioner.py</span></code></p>
@@ -313,7 +314,7 @@ The model can be generated by running the following script:</p>
 <p>If the model is not found, the scan data will still be loaded for the patient, however the tissue sectioning options will be removed.</p>
 </section>
 <section id="masked-data-infill-model">
-<h4>Masked Data infill model<a class="headerlink" href="#masked-data-infill-model" title="Permalink to this headline"></a></h4>
+<h4>Masked Data infill model<a class="headerlink" href="#masked-data-infill-model" title="Permalink to this heading"></a></h4>
 <p>Masked data infill model trainers have been defined to handle the self-supervised training process of infill models. Scripts for inspecting the performance of each model after training are defined in the same directories as the relevant trainer. Each of these are in experiments/masked_data/dl.
 Infill models did not get integrated into the GUI, though their outputs have been of interest for anomaly highlighting an exact method to best implement this was not completed during the project.</p>
 <p>The model used most frequently in stakeholder discussions was experiments/second_try_with_blur.
@@ -326,7 +327,7 @@ Output examples can be saved to extra_data/infiller_with_blur by running
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">process_full_scan.py</span></code> in the relevant experiment directory.</p>
 </section>
 <section id="dino-for-tissue-sectioning">
-<h4>DINO for tissue sectioning<a class="headerlink" href="#dino-for-tissue-sectioning" title="Permalink to this headline"></a></h4>
+<h4>DINO for tissue sectioning<a class="headerlink" href="#dino-for-tissue-sectioning" title="Permalink to this heading"></a></h4>
 <p>The DINO library has been cloned into the repository from <a class="reference external" href="https://github.com/facebookresearch/dino">https://github.com/facebookresearch/dino</a>, and minor
 modifications made in order to train models on a single GPU machine.</p>
 <p>These changes were:</p>
@@ -341,7 +342,7 @@ of image files. Two separate datasets were generated, with the first 10k axial i
 </section>
 </section>
 <section id="experiments">
-<h3>Experiments<a class="headerlink" href="#experiments" title="Permalink to this headline"></a></h3>
+<h3>Experiments<a class="headerlink" href="#experiments" title="Permalink to this heading"></a></h3>
 <p>To run experiments:</p>
 <ul class="simple">
 <li><p>Install experiment requirements <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">&quot;.[experiments]&quot;</span></code>.</p></li>
@@ -362,14 +363,14 @@ These options will run the notebook and save the updated output to the same note
 </section>
 </section>
 <section id="nhs-ai-lab-skunkworks">
-<h2>NHS AI Lab Skunkworks<a class="headerlink" href="#nhs-ai-lab-skunkworks" title="Permalink to this headline"></a></h2>
+<h2>NHS AI Lab Skunkworks<a class="headerlink" href="#nhs-ai-lab-skunkworks" title="Permalink to this heading"></a></h2>
 <p>The project is supported by the NHS AI Lab Skunkworks, which exists within the NHS AI Lab at NHSX to support the health and care community to rapidly progress ideas from the conceptual stage to a proof of concept.</p>
 <p>Find out more about the <a class="reference external" href="https://www.nhsx.nhs.uk/ai-lab/ai-lab-programmes/skunkworks/">NHS AI Lab Skunkworks</a>.
 Join our <a class="reference external" href="https://future.nhs.uk/connect.ti/system/text/register">Virtual Hub</a> to hear more about future problem-sourcing event opportunities.
-Get in touch with the Skunkworks team at <a class="reference external" href="mailto:aiskunkworks&#37;&#52;&#48;nhsx&#46;nhs&#46;uk">aiskunkworks<span>&#64;</span>nhsx<span>&#46;</span>nhs<span>&#46;</span>uk</a>.</p>
+Get in touch with the Skunkworks team at <a class="reference external" href="mailto:england&#46;aiskunkworks&#37;&#52;&#48;nhs&#46;net">england<span>&#46;</span>aiskunkworks<span>&#64;</span>nhs<span>&#46;</span>net</a>.</p>
 </section>
 <section id="licence">
-<h2>Licence<a class="headerlink" href="#licence" title="Permalink to this headline"></a></h2>
+<h2>Licence<a class="headerlink" href="#licence" title="Permalink to this heading"></a></h2>
 <p>Unless stated otherwise, the codebase is released under <a class="reference external" href="LICENCE">the MIT Licence</a>.
 This covers both the codebase and any sample code in the documentation.</p>
 <p>Example data shown in screenshots or video demonstrations are from the <a class="reference external" href="tcia">National Cancer Institute Clinical Proteomic Tumor Analysis Consortium (CPTAC). (2018). Radiology Data from the Clinical Proteomic Tumor Analysis Consortium Uterine Corpus Endometrial Carcinoma [CPTAC-UCEC] Collection [Data set]. The Cancer Imaging Archive.</a> under a <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</p>
